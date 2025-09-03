@@ -1,40 +1,53 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-body{
-    
+body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    /* background-position: center; */
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
+    /* Centra horizontalmente */
     align-items: center;
-    padding: 1rem;
-    background-color: #F2E8DF;
-    height: 100px;
+    /* Centra verticalmente */
+    height: 150px;
+    /* Altura fija para el cabecero */
+    padding: 1rem 2rem;
+    background-color: #f7f5f5;
     border-bottom: 1px solid #ccc;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo img{
-    max-width: 60%;
-    height: auto;
-    margin-left: 1rem;
-    justify-content: center;
+.logo-link {
+    display: flex;
+    height: 100%;
     align-items: center;
-    transition: transform 0.3s ease;
+    justify-content: center;
 }
 
-.logo img:hover {
+.logo {
+    max-height: 100%;
+    max-width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.logo:hover {
     transform: scale(1.04);
     filter: brightness(1.8);
+}
+
+.icono-menu {
+    height: auto;
+    width: 60px;
+    transition: transform 0.3s ease;
+    display: block;
 }
 
 .abrir-menu,
@@ -43,12 +56,11 @@ header{
     border: 0;
 }
 
-.abrir-menu{
-    color: #F2E8DF;
-    font-size: 2.5rem;
-    background-color: black;
-    border-radius: 5px;
-    padding: 0.2rem;
+.abrir-menu {
+
+    background-color: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
 }
 
@@ -57,7 +69,7 @@ header{
     color: #ffffff;
 }
 
-.cerrar-menu{
+.cerrar-menu {
     color: #333;
     font-size: 2rem;
     color: #000000;
@@ -70,13 +82,14 @@ header{
 
 .cerrar-menu:hover {
     transform: scale(1.1);
-    color: #FF0000; /* Rojo para destacar el cierre */
+    color: #FF0000;
+    /* Rojo para destacar el cierre */
     background-color: #ffffff;
     border-radius: 5px;
     padding: 0.4rem;
 }
 
-.nav{
+.nav {
     position: fixed;
     top: 0;
     right: 0;
@@ -92,16 +105,16 @@ header{
     right: 0;
     background-color: #000000;
     padding: 2rem;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);  
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
 }
 
-.nav.visible{
+.nav.visible {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
 }
 
-.nav-list{
+.nav-list {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -138,10 +151,11 @@ header{
 }
 
 .nav-list li a:hover::after {
-    width: 100%; /* Animated line under the link */
+    width: 100%;
+    /* Animated line under the link */
 }
 
-.main-content{
+.main-content {
     border-top: 0;
     background-image: url('/images/background.jpg');
     background-size: cover;
@@ -156,21 +170,21 @@ header{
     padding: 0rem;
 }
 
-.welcome-section{
+.welcome-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.welcome{
+.welcome {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.welcome-section h1{
+.welcome-section h1 {
     font-size: 3rem;
     color: #F2E8DF;
     padding: 2rem;
@@ -182,7 +196,7 @@ header{
     text-align: center;
 }
 
-.welcome p{
+.welcome p {
     font-size: 1.7rem;
     margin-bottom: 2rem;
     padding: 2rem;
@@ -195,7 +209,7 @@ header{
     margin-left: 2rem;
 }
 
-.new-customer{
+.new-customer {
     margin-top: 3rem;
     display: flex;
     flex-wrap: wrap;
@@ -209,13 +223,13 @@ header{
     line-height: normal;
 }
 
-.new-customer h2{
+.new-customer h2 {
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
 }
 
-.new-customer p{
+.new-customer p {
     font-size: 1rem;
     margin-bottom: 0rem;
     padding: 0rem;
@@ -224,18 +238,18 @@ header{
     line-height: normal;
 }
 
-.new-customer-register{
+.new-customer-register {
     text-decoration: underline;
     font-weight: bold;
     color: #007BFF;
 }
 
-.new-customer-register:hover{
-    color: #F2E8DF ;
+.new-customer-register:hover {
+    color: #F2E8DF;
     text-decoration: underline;
 }
 
-.footer{
+.footer {
     display: flex;
     flex-wrap: wrap;
     background-color: #6C736A;
@@ -246,34 +260,34 @@ header{
     padding-left: 0rem;
 }
 
-.footer-section{
+.footer-section {
     margin-top: 0.5rem;
     display: flex;
     flex-wrap: wrap;
     color: #F2E8DF;
 }
 
-.sitemap{
+.sitemap {
     width: 46%;
     padding-bottom: 1.5rem;
     padding-left: 0.7rem;
 }
 
-.contact-us{
+.contact-us {
     width: 46%;
 }
 
 
-.open-hours{
+.open-hours {
     width: 46%;
     padding-left: 0.7rem;
 }
 
-.find-us{
+.find-us {
     width: 46%;
 }
 
-.follow-us{
+.follow-us {
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -281,7 +295,7 @@ header{
     margin-top: 2rem;
 }
 
-.follow-us .icons{
+.follow-us .icons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -295,7 +309,7 @@ header{
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.follow-us .icons .social-icon{
+.follow-us .icons .social-icon {
     transition: transform 0.5s ease;
 }
 
@@ -304,57 +318,66 @@ header{
     transform: scale(1.2);
 }
 
-.sitemap, .contact-us, .open-hours, .find-us, .follow-us{
+.sitemap,
+.contact-us,
+.open-hours,
+.find-us,
+.follow-us {
     color: rgb(218, 218, 218);
 }
 
-.follow-us h3{
+.follow-us h3 {
     text-align: center;
     align-items: center;
     justify-content: center;
     color: #F2E8DF;
 }
 
-.footer p{
+.footer p {
     color: #F2E8DF;
 }
 
-.footer a{
+.footer a {
     text-decoration: none;
     color: #F2E8DF;
     display: block;
     margin-bottom: 0px;
 }
 
-footer a:hover{
+footer a:hover {
     color: #c9c9c9
 }
 
 .follow-us {
     /* ... other styles ... */
-    position: relative; /* Necesario para posicionar el elemento ::after */
-  }
-  
-  .follow-us::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Ajusta la posición de la línea */
-    left: 0;
-    right: 0;
-    height: 2px; 
-    background-color: #ccc; /* Color de la línea */
-  }
+    position: relative;
+    /* Necesario para posicionar el elemento ::after */
+}
 
-  .follow-us::before {
+.follow-us::after {
     content: '';
     position: absolute;
-    top: 45%; /* Posiciona la línea justo debajo del texto */
+    bottom: -5px;
+    /* Ajusta la posición de la línea */
     left: 0;
     right: 0;
     height: 2px;
     background-color: #ccc;
-    transform: translateY(-5px); /* Mueve la línea 5px hacia arriba */
-  }
+    /* Color de la línea */
+}
+
+.follow-us::before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    /* Posiciona la línea justo debajo del texto */
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #ccc;
+    transform: translateY(-5px);
+    /* Mueve la línea 5px hacia arriba */
+}
 
 
 
@@ -363,7 +386,7 @@ footer a:hover{
     
 } */
 
-.copyright{
+.copyright {
     width: 100%;
     background-color: #F2E8DF;
     color: #131f0f;
@@ -373,13 +396,13 @@ footer a:hover{
     margin-bottom: 0.5rem;
 }
 
-.copyright h4{
+.copyright h4 {
     font-size: 0.8rem;
     text-align: center;
     margin-left: 0rem;
 }
 
-.footer-section > div:last-child {
+.footer-section>div:last-child {
     border-right: none;
 }
 
@@ -415,14 +438,14 @@ footer iframe {
     margin: 0rem;
     margin-left: auto;
     justify-content: center;
-    
+
 }
 
 .offer .images-container {
-    display: flex; 
-    justify-content: center; 
-    gap: 1rem; 
-    margin-bottom: 1rem; 
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .offer {
@@ -444,7 +467,7 @@ footer iframe {
 
 .offer:hover {
     transform: translateY(-4px);
-    
+
 }
 
 .offer img:hover {
@@ -458,7 +481,7 @@ footer iframe {
     margin-bottom: 0.1rem;
 }
 
-.images-delivery-container img{
+.images-delivery-container img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 0.1rem;
@@ -492,10 +515,18 @@ footer iframe {
     margin-bottom: 0.5rem;
 }
 
-.buy-buttonmenua, .buy-buttonmenub,
-.buy-buttonlunch1, .buy-buttonlunch2, .buy-buttonlunch3, 
-.buy-buttonex1, .buy-buttonex2, .buy-buttonex3,
-.buy-button-of1, .buy-button-of2, .buy-button-of3, .buy-button-of4 {
+.buy-buttonmenua,
+.buy-buttonmenub,
+.buy-buttonlunch1,
+.buy-buttonlunch2,
+.buy-buttonlunch3,
+.buy-buttonex1,
+.buy-buttonex2,
+.buy-buttonex3,
+.buy-button-of1,
+.buy-button-of2,
+.buy-button-of3,
+.buy-button-of4 {
     background-color: #007bff;
     color: #fff;
     padding: 0.5rem 2rem;
@@ -506,10 +537,18 @@ footer iframe {
     transition: background-color 0.3s ease;
 }
 
-.buy-buttonmenua:hover, .buy-buttonmenub:hover,
-.buy-buttonlunch1:hover, .buy-buttonlunch2:hover, .buy-buttonlunch3:hover, 
-.buy-buttonex1:hover, .buy-buttonex2:hover, .buy-buttonex3:hover,
-.buy-button-of1:hover, .buy-button-of2:hover, .buy-button-of3:hover, .buy-button-of4:hover {
+.buy-buttonmenua:hover,
+.buy-buttonmenub:hover,
+.buy-buttonlunch1:hover,
+.buy-buttonlunch2:hover,
+.buy-buttonlunch3:hover,
+.buy-buttonex1:hover,
+.buy-buttonex2:hover,
+.buy-buttonex3:hover,
+.buy-button-of1:hover,
+.buy-button-of2:hover,
+.buy-button-of3:hover,
+.buy-button-of4:hover {
     background-color: #00a838;
 }
 
@@ -546,7 +585,7 @@ footer iframe {
     text-align: center;
 }
 
-.discount-table tbody{
+.discount-table tbody {
     font-size: 0.8rem;
 }
 
@@ -579,23 +618,26 @@ footer iframe {
     color: #333;
 }
 
-.party-menu, .lunch-menu, .executive-menu, .breakfast-menu {
+.party-menu,
+.lunch-menu,
+.executive-menu,
+.breakfast-menu {
     display: flex;
-    
+
     flex-wrap: wrap;
     gap: 0.7rem;
     margin: 0rem;
     justify-content: center;
     width: 90%;
     margin-left: 1rem;
-    
+
 }
 
 .menu .images-container {
-    display: flex; 
-    justify-content: center; 
-    gap: 1rem; 
-    margin-bottom: 1rem; 
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .menu {
@@ -617,7 +659,7 @@ footer iframe {
 
 .menu:hover {
     transform: translateY(-4px);
-    
+
 }
 
 .menu img:hover {
@@ -659,12 +701,12 @@ footer iframe {
     margin-bottom: 0.5rem;
 }
 
-.add-to-cart{
+.add-to-cart {
     margin-top: auto;
     text-align: center;
 }
 
-.add-to-cart .buy-button{
+.add-to-cart .buy-button {
     background-color: #007bff;
     color: #fff;
     padding: 0.5rem 2rem;
@@ -682,11 +724,11 @@ footer iframe {
 
 /* CONTACT US STYLES */
 
-.contact-us-section{
+.contact-us-section {
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
-    align-items: center;   
+    align-items: center;
     justify-content: center;
     width: auto;
     margin: 0 auto;
@@ -705,7 +747,7 @@ footer iframe {
 
 }
 
-.contact-form-section h3{
+.contact-form-section h3 {
     color: #000000;
     font-size: 1.4rem;
     padding: 0rem;
@@ -713,7 +755,7 @@ footer iframe {
 
 /* CONTACT FORM */
 
-.contact{
+.contact {
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -791,16 +833,16 @@ footer iframe {
 
 .submit-btn:hover {
     background-color: #28a745;
-    
+
 }
 
 
-.error{
+.error {
     color: red;
     font-size: 0.7em;
 }
 
-.contact-form-section p{
+.contact-form-section p {
     color: rgb(71, 71, 71);
 }
 
@@ -819,11 +861,12 @@ input[type="text"] {
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border: 1px solid #8a2be2; /* Violeta */
+    border: 1px solid #8a2be2;
+    /* Violeta */
     outline: none;
 }
 
-::placeholder{
+::placeholder {
     color: rgb(141, 141, 141);
 }
 
@@ -831,14 +874,14 @@ textarea:focus {
 /* REGISTER/LOGIN PAGE */
 /* CONTACT FORM */
 
-.register-page{
+.register-page {
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-top: 2rem;
 }
 
-.register{
+.register {
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -892,7 +935,7 @@ textarea:focus {
 }
 
 
-.register-form h1{
+.register-form h1 {
     text-align: center;
     margin-bottom: 1.5em;
     font-size: 1.8em;
@@ -911,17 +954,17 @@ textarea:focus {
     flex-direction: column;
     flex: unset;
     margin: 0.5rem;
-    
+
 }
 
-.register-form label{
+.register-form label {
     padding: 0.1rem;
     margin-top: 0.5rem;
     margin-bottom: 0rem;
 
 }
 
-.register-form input{
+.register-form input {
     margin-top: 0rem;
     margin-bottom: 0rem;
 }
@@ -953,7 +996,7 @@ textarea:focus {
 
 /* Submit button styling */
 
-.error{
+.error {
     color: red;
     font-size: 0.7em;
 }
@@ -974,11 +1017,12 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border: 1px solid #8a2be2; /* Violeta */
+    border: 1px solid #8a2be2;
+    /* Violeta */
     outline: none;
 }
 
-::placeholder{
+::placeholder {
     color: rgb(141, 141, 141);
 }
 
@@ -993,7 +1037,7 @@ textarea:focus {
     width: 60%;
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
     background-color: #28a745;
 }
 
@@ -1010,7 +1054,7 @@ textarea:focus {
     margin: 10px 0;
 }
 
-.print-menu{
+.print-menu {
     display: flex;
     justify-content: flex-end;
     padding-right: 2rem;
@@ -1022,11 +1066,13 @@ textarea:focus {
 }
 
 .print-button i {
-    margin-left: 1rem; /* Espacio entre el texto y el ícono */
-    font-size: 1rem; /* Ajusta el tamaño del ícono */
+    margin-left: 1rem;
+    /* Espacio entre el texto y el ícono */
+    font-size: 1rem;
+    /* Ajusta el tamaño del ícono */
 }
 
-.confirmation-form-section{
+.confirmation-form-section {
     background-color: rgba(219, 219, 219, 0.9);
     padding: 1rem;
     border-radius: 10px;
@@ -1039,39 +1085,43 @@ textarea:focus {
     align-items: center;
 }
 
-.confirmation-form-section h3{
+.confirmation-form-section h3 {
     color: #3b3b3b;
     font-size: 1.4rem;
     padding: 0rem;
 }
 
-.confirmation-form p{
+.confirmation-form p {
     color: #424242;
 }
 
-.confirmation-form{
+.confirmation-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-@media print{
-    header, footer, .footer, .print-button{
+@media print {
+
+    header,
+    footer,
+    .footer,
+    .print-button {
         display: none;
     }
 
-    .print-only{
+    .print-only {
         display: block;
     }
 
-    body{
+    body {
         font-size: 14px;
         color: #000;
     }
 
     /* Remove background colours */
-    *{
+    * {
         background: none !important;
         color: #000 !important;
     }
@@ -1087,14 +1137,14 @@ textarea:focus {
         display: none;
     }
 
-    header{
+    header {
         padding: 0;
         border-bottom: 1px solid #ddd;
         display: flex;
     }
-    
-    
-    .logo img{
+
+
+    .logo img {
         max-width: 34%;
         height: auto;
         margin-left: 0;
@@ -1103,7 +1153,7 @@ textarea:focus {
         transition: transform 0.3s ease;
     }
 
-    .nav{
+    .nav {
         /* display: block; */
         position: absolute;
         top: 0;
@@ -1118,14 +1168,14 @@ textarea:focus {
         justify-content: center;
     }
 
-    .nav-list{
+    .nav-list {
         flex-direction: row;
         list-style: none;
         display: flex;
-        gap: 0rem;     
+        gap: 0rem;
     }
 
-    .nav-list li a{
+    .nav-list li a {
         text-decoration: none;
         color: #1c1c1c;
     }
@@ -1136,7 +1186,7 @@ textarea:focus {
         color: #F2E8DF;
     }
 
-    .main-content{
+    .main-content {
         background-image: url('/images/background.jpg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -1149,19 +1199,19 @@ textarea:focus {
         padding: 1rem;
     }
 
-    .welcome-section{
+    .welcome-section {
         display: flex;
         flex-direction: column;
     }
 
-    .welcome{
+    .welcome {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .welcome-section h1{
+    .welcome-section h1 {
         font-size: 3rem;
         color: #F2E8DF;
         padding: 2rem;
@@ -1172,8 +1222,8 @@ textarea:focus {
         justify-content: center;
         text-align: center;
     }
-    
-    .welcome p{
+
+    .welcome p {
         font-size: 2rem;
         margin-bottom: 3rem;
         padding: 2rem;
@@ -1183,10 +1233,10 @@ textarea:focus {
         width: 75%;
         align-items: center;
         justify-content: center;
-    
+
     }
-    
-    .new-customer{
+
+    .new-customer {
         margin-top: 3rem;
         display: flex;
         flex-direction: column;
@@ -1198,15 +1248,15 @@ textarea:focus {
         width: 100%;
         border-radius: 15px;
     }
-    
-    .new-customer h2{
+
+    .new-customer h2 {
         display: flex;
         flex-direction: column;
         font-size: 2.3rem;
         line-height: 2;
     }
-    
-    .new-customer p{
+
+    .new-customer p {
         font-size: 1.6rem;
         margin-bottom: 0rem;
         padding: 0rem;
@@ -1216,26 +1266,29 @@ textarea:focus {
         justify-content: center;
         width: 50%;
     }
-    
-    .party-menu, .lunch-menu, .executive-menu, .breakfast-menu {
+
+    .party-menu,
+    .lunch-menu,
+    .executive-menu,
+    .breakfast-menu {
         display: flex;
-        
+
         flex-wrap: wrap;
         gap: 0.7rem;
         margin: 0rem;
         justify-content: center;
         width: 90%;
         margin-left: 1rem;
-        
+
     }
-    
+
     .menu .images-container {
-        display: flex; 
-        justify-content: center; 
-        gap: 1rem; 
-        margin-bottom: 1rem; 
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
-    
+
     .menu {
         background-color: #FFFFFFD9;
         border: 1px solid #ddd;
@@ -1259,16 +1312,16 @@ textarea:focus {
         margin: 0rem;
         margin-left: auto;
         justify-content: center;
-        
+
     }
-    
+
     .offer .images-container {
-        display: flex; 
-        justify-content: center; 
-        gap: 1rem; 
-        margin-bottom: 1rem; 
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
-    
+
     .offer {
         background-color: #FFFFFFD9;
         border: 1px solid #ddd;
@@ -1282,10 +1335,10 @@ textarea:focus {
         flex-direction: column;
         transition: transform 0.3s ease;
         margin-bottom: 1rem;
-    
+
     }
 
-    .contact-us-section{
+    .contact-us-section {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1296,17 +1349,17 @@ textarea:focus {
     }
 
 
-    .contact-form-section{
+    .contact-form-section {
         padding-right: 1rem;
         width: 100%;
     }
 
-    .google-btn{
+    .google-btn {
         width: auto;
         margin-top: 0rem;
     }
 
-    .register-page{
+    .register-page {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1330,38 +1383,41 @@ textarea:focus {
 
 
 
-    .register-form{
+    .register-form {
         padding-right: 0rem;
         width: 100%;
     }
 
     .footer-section {
-        flex-direction: row; 
+        flex-direction: row;
         padding: 0rem 0rem;
         border-bottom: 0;
         color: #F2E8DF;
     }
 
-    .sitemap, .contact-us, .open-hours{
+    .sitemap,
+    .contact-us,
+    .open-hours {
         width: 30%;
     }
 
-    .find-us, .follow-us{
+    .find-us,
+    .follow-us {
         width: 45%;
     }
 
-    .follow-us{
+    .follow-us {
         text-align: left;
         margin-top: 0rem;
         padding-top: 0rem;
     }
-    
-    .follow-us h3{
+
+    .follow-us h3 {
         text-align: left;
         margin-top: 0rem;
         padding-top: 0rem;
     }
-    
+
     footer iframe {
         max-width: 95%;
         height: auto;
@@ -1371,7 +1427,8 @@ textarea:focus {
 
     .follow-us::after,
     .follow-us::before {
-        content: none; /* Elimina las líneas */
+        content: none;
+        /* Elimina las líneas */
     }
 
 }
@@ -1381,13 +1438,13 @@ textarea:focus {
 
 /* Media query for desktop devices (min-width: 991px) */
 @media only screen and (min-width: 991px) {
-    
+
     .abrir-menu,
     .cerrar-menu {
         display: none;
     }
 
-    header{
+    header {
         padding: 2rem;
         border-bottom: 1px solid #ddd;
         display: flex;
@@ -1396,12 +1453,12 @@ textarea:focus {
         background-color: #F2E8DF;
     }
 
-    .logo img{
+    .logo img {
         max-width: 45%;
         height: auto;
     }
 
-    .nav{
+    .nav {
         /* display: block; */
         position: absolute;
         bottom: 0;
@@ -1413,10 +1470,10 @@ textarea:focus {
         box-shadow: none;
         height: 100px;
         justify-content: center;
-        
+
     }
 
-    .nav-list{
+    .nav-list {
         list-style: none;
         display: flex;
         gap: 2rem;
@@ -1425,7 +1482,7 @@ textarea:focus {
         vertical-align: bottom;
     }
 
-    .nav-list li a{
+    .nav-list li a {
         text-decoration: none;
         color: #1c1c1c;
     }
@@ -1436,7 +1493,7 @@ textarea:focus {
         color: #F2E8DF;
     }
 
-    .main-content{
+    .main-content {
         background-image: url('/images/background.jpg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -1447,14 +1504,14 @@ textarea:focus {
         padding: 1rem;
     }
 
-    .welcome-section{
+    .welcome-section {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .welcome h1{
+    .welcome h1 {
         font-size: 4rem;
         color: #F2E8DF;
         margin-bottom: 1rem;
@@ -1463,18 +1520,18 @@ textarea:focus {
         align-items: center;
         justify-content: center;
     }
-    
-    .welcome p{
+
+    .welcome p {
         font-size: 3rem;
         margin-bottom: 2rem;
         padding: 2rem;
         margin-right: 4rem;
         background-color: #00000062;
         border-radius: 10px;
-    
+
     }
-    
-    .new-customer{
+
+    .new-customer {
         margin-top: 5rem;
         display: flex;
         flex-direction: column;
@@ -1486,14 +1543,14 @@ textarea:focus {
         margin-right: 4rem;
         border-radius: 10px;
     }
-    
-    .new-customer h2{
+
+    .new-customer h2 {
         display: flex;
         flex-direction: column;
         font-size: 2rem;
     }
-    
-    .new-customer p{
+
+    .new-customer p {
         font-size: 2rem;
         margin-bottom: 0rem;
         padding: 0rem;
@@ -1502,7 +1559,10 @@ textarea:focus {
         line-height: 4;
     }
 
-    .party-menu, .lunch-menu, .executive-menu, .breakfast-menu {
+    .party-menu,
+    .lunch-menu,
+    .executive-menu,
+    .breakfast-menu {
         display: flex;
         gap: 0.7rem;
         margin: auto;
@@ -1510,14 +1570,14 @@ textarea:focus {
         align-items: center;
         justify-content: center;
     }
-    
+
     .menu .images-container {
-        display: flex; 
-        justify-content: center; 
-        gap: 1rem; 
-        margin-bottom: 1rem; 
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
-    
+
     .menu {
         background-color: #FFFFFFD9;
         border: 1px solid #ddd;
@@ -1542,16 +1602,16 @@ textarea:focus {
         margin: 0rem;
         margin-left: auto;
         justify-content: center;
-        
+
     }
-    
+
     .offer .images-container {
-        display: flex; 
-        justify-content: center; 
-        gap: 1rem; 
-        margin-bottom: 1rem; 
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
-    
+
     .offer {
         background-color: #FFFFFFD9;
         border: 1px solid #ddd;
@@ -1565,35 +1625,35 @@ textarea:focus {
         flex-direction: column;
         transition: transform 0.3s ease;
         margin-bottom: 1rem;
-    
+
     }
 
-    .contact-us-section{
+    .contact-us-section {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         padding: 2rem;
         width: auto;
-        
+
     }
 
-    .contact{
+    .contact {
         padding: 1rem;
         width: 100%;
     }
 
-    .contact-form-section{
+    .contact-form-section {
         padding: 1rem;
         width: auto;
     }
 
-    .google-btn{
+    .google-btn {
         width: 100%;
         margin-top: 0rem;
     }
 
-    .register-page{
+    .register-page {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1604,7 +1664,7 @@ textarea:focus {
         margin: auto;
     }
 
-    .register h2{
+    .register h2 {
         text-align: center;
         align-items: center;
         justify-content: center;
@@ -1616,17 +1676,17 @@ textarea:focus {
         border-radius: 10px;
     }
 
-    .register{
+    .register {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 1rem;
         width: 33%;
-        
+
     }
 
-    .register-form{
+    .register-form {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1637,51 +1697,51 @@ textarea:focus {
         min-width: 40%;
     }
 
-    .register-login-form{
+    .register-login-form {
         align-items: center;
         justify-content: center;
         width: 100%;
     }
 
-    .google-btn{
+    .google-btn {
         width: auto;
         margin-top: 0rem;
     }
 
-    footer{
+    footer {
         font-size: 0.9rem;
     }
 
     .footer-section {
-        flex-direction: row; 
+        flex-direction: row;
         width: 100%;
     }
 
-    .sitemap{
+    .sitemap {
         width: 12%;
     }
 
-    .open-hours{
+    .open-hours {
         width: 14%;
     }
 
-    .contact-us{
+    .contact-us {
         width: 19%;
     }
 
-    .find-us, 
-    .follow-us{
+    .find-us,
+    .follow-us {
         width: 24%;
     }
 
-    .follow-us h3{
+    .follow-us h3 {
         text-align: left;
         align-items: center;
         justify-content: center;
         margin-left: 1rem;
     }
 
-    .follow-us .icons{
+    .follow-us .icons {
         display: flex;
         margin-left: 1rem;
         justify-content: left;
@@ -1691,7 +1751,7 @@ textarea:focus {
         font-size: 1.3rem;
     }
 
-    footer h3{
+    footer h3 {
         font-size: 1.2rem;
     }
 
