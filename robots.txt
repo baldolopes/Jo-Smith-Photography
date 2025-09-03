@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: https://dignnanscatering.netlify.app/confirmation.html
+Allow: https://dignnanscatering.netlify.app/sitemap.xml

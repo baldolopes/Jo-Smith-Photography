@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Discover exclusive monthly offers at Dignan's Catering. Enjoy discounts on lunch specials, party menus, executive catering, and free delivery deals in Edinburgh.">
+        <meta name="keywords" content="catering offers, food discounts, lunch deals, party menu, executive catering, free delivery, Edinburgh catering">
+        <meta name="author" content="Dignan's Catering">
+        <meta name="robots" content="index, follow">
+    
+        <!-- Open Graph (For Facebook & LinkedIn) -->
+        <meta property="og:title" content="Exclusive Monthly Offers - Dignan's Catering">
+        <meta property="og:description" content="Check out Dignan's Catering's special discounts on food and catering services. Great deals on lunch combos, party catering, and free delivery every Friday!">
+        <meta property="og:image" content="images/dignans.png">
+        <meta property="og:url" content="https://dignnanscatering.netlify.app/offers">
+        <meta property="og:type" content="website">
+    
+        <!-- Twitter Card (For Twitter/X sharing) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Exclusive Monthly Offers - Dignan's Catering">
+        <meta name="twitter:description" content="Save on delicious meals with our catering discounts! Check out our latest offers on lunch deals, party catering, and more.">
+        <meta property="og:image" content="images/dignans.png">
+
+        <!-- Robots -->
+        <meta name="robots" content="index, follow">
+    
+        <title>Exclusive Monthly Offers - Dignan's Catering</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<body>
+    <!-- Header Container -->
+    <header>
+        <!-- left hand container -->
+         <div class="header-top">
+            <div class="logo container">
+                <a href="index.html"><img class="logo" src="images/dignans.png" alt="Dignan's Catering Logo"></a>
+            </div>
+         </div>
+          <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
+          <nav class="nav" id="nav">
+            
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
+
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="register-login.html">Register/Login</a></li>
+            </ul>
+          </nav>
+    
+    </header>
+    <!-- End of Header -->
+<!-- Main part of page -->
+
+<main class="main-content">
+    <section class="monthly-offers">
+        <!-- Botón Print Menu -->
+         <div class="print-menu">
+            <button id="print-menu-button" class="print-button" onclick="enhancedPrint()">
+                Print Menu <i class="bi bi-printer"></i>
+            </button>
+        </div>
+       
+        <script>
+            function enhancedPrint(){
+                // Optional: Apply a "printing" class if additional styling is needed
+                document.body.classList.add('printing');
+                window.print();
+
+                // Remove the "printing class after printing"
+            }
+        </script>
+
+        <h2>MONTHLY SPECIAL OFFERS</h2>
+        <div class="offers-container">
+            <!-- Offer 1 -->
+            <div class="offer">
+                <div class="images-container">
+                    <img src="images/offers/lunch-duo1.jpg" alt="Lunch Special Duo">
+                    <img src="images/offers/lunch-duo2.jpg" alt="Lunch Special Duo">
+                </div>
+                <h3>Lunch Special Duo</h3>
+                <p>Get a 10% Discount on our "Mix and Munch Deal," when you choose two or more items from our lunch:</p>
+                <ul>
+                    <li>Sandwich + Salad Box (£4.50 instead of £5.00)</li>
+                    <li>Soup + Baguette (£1.98 instead of £2.20)</li>
+                </ul>
+                
+                <div class="add-to-cart">
+                    <button id="buy-button-of1" class="buy-button-of1">Buy Now</button>
+                </div>
+
+            </div>
+            <!-- Offer 2 -->
+            <div class="offer">
+                <div class="images-container">
+                    <img src="images/offers/party-deal1.jpg" alt="Party Starter Deal">
+                    <img src="images/offers/party-deal2.jpg" alt="Party Starter Deal">
+                </div>
+                <h3>Party Starter Deal</h3>
+                <p>Book a Party Menu for 10 or more guests and receive a free tray of mini desserts (value: £8.00):</p>
+                <ul>
+                    <li>Party Menu A: £30.00 for 10 guests</li>
+                    <li>Party Menu B: £40.00 for 10 guests</li>
+                </ul>
+
+                <div class="add-to-cart">
+                    <button id="buy-button-of2" class="buy-button-of2">Buy Now</button>
+                </div>
+                
+            </div>
+            <!-- Offer 3 -->
+            <div class="offer">
+                <div class="images-container">
+                    <img src="images/offers/exec-catering1.jpg" alt="Executive Catering Bonus">
+                    <img src="images/offers/exec-catering2.jpg" alt="Executive Catering Bonus">
+                </div>
+                <h3>Executive Catering Bonus</h3>
+                <p>Order any Executive Menu (A, B, or C) for 10 or more guests and receive a free fresh fruit platter (value: £8.00):</p>
+                <ul>
+                    <li>Menu A: £75.00 for 10 guests</li>
+                    <li>Menu B: £90.00 for 10 guests</li>
+                    <li>Menu C: £105.00 for 10 guests</li>
+                </ul>
+
+                <div class="add-to-cart">
+                    <button id="buy-button-of3" class="buy-button-of3">Buy Now</button>
+                </div>
+
+            </div>
+            <!-- Offer 4 -->
+            <div class="offer">
+                <div class="images-delivery-container">
+                    <img src="images/offers/free-delivery2.jpg" alt="Free Delivery Fridays">
+                </div>
+                <h3>Free Delivery Fridays</h3>
+                <p>Get free delivery on all orders placed for Friday within the Edinburgh district (save £5.00).</p>
+
+                <div class="add-to-cart">
+                    <button id="buy-button-of4" class="buy-button-of4">Add Offer</button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="discount-codes">
+        <h2>Discount Codes</h2>
+        <table class="discount-table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Discount</th>
+                    <th>Valid Until</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>WELCOME10</td>
+                    <td>10% off for first-time customers</td>
+                    <td>10%</td>
+                    <td>31st March 2025</td>
+                </tr>
+                <tr>
+                    <td>PARTY20</td>
+                    <td>20% off on party orders over £100</td>
+                    <td>20%</td>
+                    <td>30th June 2025</td>
+                </tr>
+                <tr>
+                    <td>FREESHIP</td>
+                    <td>Free delivery on orders above £50</td>
+                    <td>£5</td>
+                    <td>31st December 2025</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+</main>
+
+
+<footer class="footer">
+    <!-- Left hand -->
+    <div class="footer-section">
+        <div class="sitemap">
+            <h3>Sitemap</h3>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="menu.html">Our Menu</a></p>
+            <p><a href="offers.html">Monthly Offers</a></p>
+            <p><a href="contact-us.html">Contact Us</a></p>
+            <p><a href="register-login.html">Register/Login</a></p>
+
+
+        </div>
+
+        <div class="contact-us">
+            <h3>Contact Us</h3>
+            <p><a href="tel:+441316259874">0131 625 9874</a></p>
+            <p> <a href="mailto:dignans@gmail.com">dignans@gmail.com </a> </p>
+            <p><a href="https://wa.me/441316259874"> Send WhatsApp Message</a></p>
+            <p><a href="sms:+441316259874">Send Text Message</a></p>
+        </div>
+       
+        <div class="open-hours">
+            <h3>Hours</h3>
+            <h4>Mon-Fri:</h4> <p> 7:00 AM - 7:00 PM</p>
+            <br>
+            <h4>Sat-Sun:</h4> <p> 8:00 AM - 5:00 PM</p>
+        </div>
+        <div class="find-us">
+            <h3>Find Us</h3>
+            
+            <iframe title="Map showing the location of dignan's Catering" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8935.452559954687!2d-3.194233313474652!3d55.95174397053437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c788b8bab3c3%3A0xd28beb63ff981b64!2sEdinburgh%20EH8%208BG!5e0!3m2!1sen!2suk!4v1734085086407!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="follow-us">
+            <h3>Follow Us</h3>
+            <div class="icons">
+                <a href="https://www.facebook.com/" class="social-icon"><i class="bi bi-facebook"></i> </a>
+                <a href="https://www.instagram.com/" class="social-icon"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com/" class="social-icon"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.youtube.com/" class="social-icon"><i class="bi bi-youtube"></i></a>
+                <a href="https://www.linkedin.com/" class="social-icon"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <h4> &copy; Dignan's Catering 2025 </h4>
+        </div>
+        
+    </div>
+</footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
