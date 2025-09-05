@@ -149,6 +149,10 @@ header {
     padding: 2rem;
     border-radius: 50px;
     text-align: center;
+
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
 }
 
 
@@ -167,7 +171,7 @@ header {
 
 .parallax-logo {
     max-width: 300px;
-    width: 80%;
+    width: 100%;
     filter: invert(1) brightness(2);
 }
 
@@ -215,6 +219,53 @@ footer {
     line-height: 1.5;
 }
 
+/* Animación que mueve el slider */
+@keyframes slide-animation {
+    0% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(0%);
+    }
+
+    /* Pausa en la imagen 1 */
+    25% {
+        transform: translateX(-20%);
+    }
+
+    /* Transición a la imagen 2 */
+    45% {
+        transform: translateX(-20%);
+    }
+
+    /* Pausa */
+    50% {
+        transform: translateX(-40%);
+    }
+
+    /* Transición a la imagen 3 */
+    70% {
+        transform: translateX(-40%);
+    }
+
+    /* Pausa */
+    75% {
+        transform: translateX(-60%);
+    }
+
+    /* Transición a la imagen 4 */
+    95% {
+        transform: translateX(-60%);
+    }
+
+    /* Pausa */
+    100% {
+        transform: translateX(-80%);
+    }
+
+    /* Vuelve al principio */
+}
 
 /* Media query for tablet devices (min-width: 767px) */
 @media only screen and (min-width: 767px) {
