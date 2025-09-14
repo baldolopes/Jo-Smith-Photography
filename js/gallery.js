@@ -49,6 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const activeImage = slides[slideIndex - 1].querySelector('img');
 
         // Actualiza la descripción
-        captionText.innerHTML = activeImage.alt;
+        captionText.innerHTML = dots[slideIndex - 1].title;
     }
 });

@@ -4,7 +4,6 @@
     text-align: center;
     background-color: #fff;
     overflow-x: hidden;
-    /* Prevent accidental horizontal scroll */
 }
 
 .gallery-section h2 {
@@ -12,9 +11,10 @@
     margin-bottom: 2rem;
 }
 
+/* This is our main wrapper. It's fluid on mobile and will be constrained on larger screens. */
 .gallery-container {
-    /* No max-width on mobile, let it be fluid */
     margin: 0 auto;
+    /* This will center it when max-width is applied */
 }
 
 .slideshow-container {
@@ -24,7 +24,6 @@
 
 .mySlides {
     display: none;
-    text-align: center;
 }
 
 .mySlides img {
@@ -42,9 +41,7 @@
     top: 50%;
     transform: translateY(-50%);
     width: 35px;
-    /* Fixed width */
     height: 35px;
-    /* Fixed height */
     padding: 0;
     display: flex;
     align-items: center;
@@ -54,7 +51,6 @@
     font-size: 18px;
     transition: background-color 0.3s ease;
     border-radius: 50%;
-    /* Circular buttons */
     user-select: none;
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -84,21 +80,27 @@
 }
 
 .caption-container {
+    padding: 0.5rem 1rem;
     text-align: center;
-    padding: 2px 16px;
+}
+
+#caption {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
     color: #333;
-    font-weight: bold;
-    min-height: 1.5em;
-    /* Prevents layout jump if caption is empty */
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
 }
 
 .row {
     display: flex;
+    justify-content: flex-start;
+    /* Aligned to the left for mobile scrolling */
     flex-wrap: nowrap;
     overflow-x: auto;
     padding: 10px 0;
     -webkit-overflow-scrolling: touch;
-    /* Smooth scroll on iOS */
     scrollbar-width: thin;
     scrollbar-color: #ccc #f1f1f1;
 }
@@ -115,6 +117,7 @@
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s ease;
+    vertical-align: middle;
 }
 
 .active,
@@ -123,36 +126,18 @@
     transform: scale(1.05);
 }
 
-.caption-container {
-    padding: 0.5rem;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
 
-#caption {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1rem;
-    color: #333;
-    font-style: italic;
-    font-weight: normal;
-    line-height: 1.3;
-    margin: 0;
-}
+/*
+========================================
+  TABLET AND DESKTOP RESPONSIVE STYLES
+========================================
+*/
 
-
-/* === Tablet Styles (768px and up) === */
 @media (min-width: 768px) {
-    .gallery-container {
-        /* Limit the width of the gallery on tablets */
-        padding: 4rem 2rem;
-    }
 
-    .slideshow-container {
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1.5rem;
+    /* The only rule we need to constrain the entire gallery */
+    .gallery-container {
+        max-width: 85%;
     }
 
     .prev,
@@ -162,41 +147,30 @@
         font-size: 24px;
     }
 
-    .prev {
-        left: 20px;
-    }
-
-    .next {
-        right: 20px;
-    }
-
     .row {
-        /* Center the thumbnails if they all fit on one line */
         justify-content: center;
+        /* Center the thumbnails inside the row */
         overflow-x: hidden;
-        /* Hide scrollbar if not needed */
+        /* Hide the scrollbar as it's no longer needed */
     }
 
     .demo {
         width: 100px;
-        /* Make thumbnails slightly larger */
     }
 }
 
-/* === Desktop Styles (992px and up) === */
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
 
-    .gallery-section {
-        padding: 5rem 3rem;
+    /* On desktops, we make the container even more narrow for a better look */
+    .gallery-container {
+        max-width: 850px;
     }
 
-    .gallery-container {
-        /* Increase the max-width for desktops */
-        max-width: 900px;
+    #caption {
+        font-size: 1.2rem;
     }
 
     .demo {
         width: 120px;
-        /* Make thumbnails even larger on desktops */
     }
 }
