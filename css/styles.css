@@ -44,11 +44,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
-    padding: 0.2rem 0.5rem;
+    height: 80px;
+    padding: 0rem 3rem;
     background-color: var(--bg-dark);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -141,7 +142,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .nav-list li a {
@@ -395,9 +396,10 @@ footer {
         display: none;
     }
 
+    /* Restore the navigation bar to its normal state in the document flow*/
     .nav {
-        position: static;
         /*Back to normal flow*/
+        position: static;
         opacity: 1;
         visibility: visible;
         transform: none;
@@ -406,40 +408,91 @@ footer {
         padding: 0;
         box-shadow: none;
         height: auto;
+        width: auto;
     }
 
+    /* Arrange navigation items in a row */
     .nav-list {
         flex-direction: row;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
-    .nav-list a:hover {
-        color: #007BFF;
+    /* Reset font size for tablet navigation */
+    .nav-list li a {
+        color: var(--highlight-grey);
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 0.5rem 0;
+        position: relative;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
     }
+
+
+    /* When a link is hovered or is the active page, change the text color */
+    .nav-list li a:hover {
+        color: var(--text-light);
+    }
+
+    /* When a link is hovered or is the active page, change the text color */
+    .nav-list li a.active {
+        color: var(--text-light);
+    }
+
+    /* Remove the default browser underline */
+    .nav-list li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent-teal);
+        bottom: 0;
+        left: 0;
+        /* Start with the underline hidden */
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* HOVER and ACTIVE states */
+    /* On hover, make the underline grow from the center */
+    .nav-list li a:hover::after,
+    .nav-list li a.active::after {
+        transform: scaleX(1);
+    }
+
+
+
+    /* Make the underline visible for the active page link */
+    .nav-list li a.active::after {
+        transform: scaleX(1);
+    }
+
 
     .about-me-content {
-        flex-direction: row;
         /* Columnas lado a lado */
-        text-align: left;
+        flex-direction: row;
         /* Texto alineado a la izquierda */
+        text-align: left;
+        gap: 3rem;
     }
 
     .about-me-image {
-        flex-basis: 30%;
         /* La imagen ocupa un 30% del espacio */
+        flex-basis: 30%;
         flex-shrink: 0;
+        padding-left: 2rem;
     }
 
     .about-me-image img {
         width: 250px;
-        /* Imagen un poco más grande */
         height: 250px;
     }
 
     .about-me-text {
-        flex-basis: 70%;
         /* El texto ocupa el 70% restante */
+        flex-basis: 70%;
     }
 
     .home-cta-section {
@@ -447,9 +500,9 @@ footer {
         justify-content: center;
         align-items: center;
         /* Vertically align cards if they have different heights */
-        /* max-width: 1100px; */
-        /* margin: 0 auto; */
+        max-width: 1200px;
         /* Center the whole section's content area */
+        margin: 0 auto;
     }
 
     .cta-item {
