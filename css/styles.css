@@ -1,5 +1,6 @@
 /* Fonts API */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
 
 
 /* Define color variables for the "Scottish Loch  theme */
@@ -31,20 +32,18 @@
 }
 
 body {
-    /* Main background is now dark */
-    /* background-color: var(--bg-dark); */
-    /* Default text is color light */
+
+    background-color: var(--bg-dark);
     color: var(--text-light);
     font-family: 'Montserrat', 'sans serif';
     line-height: 1.6;
-    font-size: 16px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 90px;
     padding: 0rem 1rem;
     background-color: var(--bg-dark);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -158,41 +157,93 @@ header {
 }
 
 .parallax-container {
-    background-image: linear-gradient(rgba(30, 36, 38, 0.2), rgba(30, 36, 38, 0.5)), url("/media/pic8.jpg");
-    height: 80vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 90vh;
+    /* This is crucial for positioning children */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: -1;
+    text-align: center;
+    /* Hide anything that might stick out */
+    overflow: hidden;
+}
+
+/* This wrapper holds all the background images*/
+.parallax-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.parallax-bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ensures the image covers the area without distortion */
+    object-fit: cover;
+    /* The Fade/Flass Effect */
+    opacity: 0;
+    /* Slow, smooth fade transition */
+    transition: opacity 1.5s ease-in-out;
+}
+
+.parallax-bg-slide.active {
+    opacity: 1;
 }
 
 .parallax-content {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     color: var(--text-light);
-    padding: 2rem;
-    border-radius: 50px;
+    padding: 3rem;
+    border-radius: 30px;
     text-align: center;
     width: 90%;
-    max-width: 500px;
+    max-width: 700px;
     box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* ---- Stacking ---- */
+    position: relative;
+    z-index: 2;
 }
 
+.parallax-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
 
-.parallax-subtitle {
+.parallax-tagline {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 1rem;
-    color: var(--highlight-grey);
+    font-size: 1.1rem;
+    color: var(--text-light);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 2rem;
-    padding-left: 1px;
+    letter-spacing: 3px;
+    margin: 1rem 0 1.7rem auto;
+    max-width: 90%;
+}
 
+.parallax-location {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--highlight-grey);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.parallax-content .cta-button {
+    padding: 0.8 2.5rem;
+    font-size: 1rem;
 }
 
 
@@ -209,8 +260,7 @@ header {
     text-align: center;
 }
 
-.about-me-home,
-.home-cta-section {
+.about-me-home {
     background-color: var(--bg-light);
     color: var(--text-dark);
     padding: 4rem 1.5rem;
@@ -232,7 +282,6 @@ header {
     border-radius: 50%;
     object-fit: cover;
     /* Ensure the image covers the area */
-    border-radius: 50%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 4px solid #ffffff;
 }
@@ -280,25 +329,32 @@ header {
     background-image: linear-gradient(rgba(30, 36, 38, 0.1), rgba(30, 36, 38, 0.2)), url("/media/images/nature/wide-images/11photo-nature.jpg");
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
 
+.cta-content-wrapper {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 5rem 1.5rem;
-    text-align: center;
+    width: 100%;
+    max-width: 500px;
 }
 
 .cta-item {
     background-color: #ffffff;
     color: var(--text-dark);
-    padding: 2.5rem;
-    border-radius: 10px;
+    padding: 2rem;
+    border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
     margin: 0 auto;
-
+    text-align: center;
+    justify-content: center;
     position: relative;
     z-index: 3;
 }
@@ -339,6 +395,14 @@ footer {
     color: var(--highlight-grey);
     text-align: center;
     padding: 2rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .footer-logo {
@@ -347,11 +411,20 @@ footer {
     filter: invert(1) brightness(1.5);
 }
 
+/* The middle row container */
+/* On mobile, it will just be a simple container */
+.footer-middle-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 2.5rem;
 }
 
 .social-links a {
@@ -378,13 +451,25 @@ footer {
     line-height: 1.5;
 }
 
+/* Container for both the date and the clock */
+.datetime-container {
+    /* space above and below the whole clock */
+    color: var(--highlight-grey);
+    /* Monospace font for a classic look*/
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+}
+
+#date {
+    font-size: 0.9rem;
+    /* A little space between the date and the clock */
+    margin-bottom: 0.25rem;
+}
 
 #clock {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
-    color: var(--highlight-grey);
-    letter-spacing: 2px;
-    margin: 1.5rem 0;
+    font-size: 1.1rem;
+    /* Make the time slightly more prominent */
+    font-weight: bold;
 }
 
 /* Media query for tablet devices (min-width: 767px) */
@@ -421,8 +506,6 @@ footer {
         background-color: transparent;
         padding: 0;
         box-shadow: none;
-        height: auto;
-        width: auto;
     }
 
     /* Arrange navigation items in a row */
@@ -446,7 +529,7 @@ footer {
 
     /* When a link is hovered or is the active page, change the text color */
     .nav-list li a:hover {
-        color: var(--text-light);
+        color: var(--accent-teal);
     }
 
     /* When a link is hovered or is the active page, change the text color */
@@ -483,6 +566,20 @@ footer {
         transform: scaleX(1);
     }
 
+    .parallax-content h1 {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+
+    .parallax-tagline {
+        font-size: 1.2rem;
+    }
+
+    .parallax-location {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        letter-spacing: 16px;
+    }
 
     .about-me-content {
         /* Columnas lado a lado */
@@ -513,15 +610,26 @@ footer {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        /* Vertically align cards if they have different heights */
-        max-width: 1200px;
         /* Center the whole section's content area */
         margin: 0 auto;
+    }
+
+    .cta-content-wrapper {
+        flex-direction: row;
+        max-width: 1100px;
     }
 
     .cta-item {
         flex: 1;
         /* Cada item ocupa el mismo espacio */
+    }
+
+    .footer-middle-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
     }
 
 }
@@ -557,5 +665,19 @@ footer {
     .nav-list a:hover {
         color: #007BFF;
     }
+
+    .cta-item {
+        flex: 0 1 500px;
+    }
+
+    .cta-content-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
 
 }
