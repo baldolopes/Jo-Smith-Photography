@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Move to the next slide, looping back to the start if at the end
             currentSlide = (currentSlide + 1) % slides.length;
 
-            // Add 'active' class to the new current slide
+            // Add 'active' class to the new current slide to trigger its animation
             slides[currentSlide].classList.add('active');
         }
 
