@@ -248,7 +248,7 @@ header {
 .parallax-content {
     background: rgba(0, 0, 0, 0.3);
     color: var(--text-light);
-    padding: 3rem;
+    padding: 2rem 1.5rem;
     border-radius: 30px;
     text-align: center;
     width: 90%;
@@ -263,11 +263,11 @@ header {
 
 .parallax-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: clamp (3rem, 10vw, 4rem);
     font-weight: 700;
-    color: #ffffff;
+    color: var(--bg-light);
     margin-bottom: 0.5rem;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .parallax-tagline {
@@ -277,7 +277,7 @@ header {
     color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin: 0 1rem 1.5rem;
+    margin: 1.5rem auto 1.5rem auto;
     max-width: 90%;
 }
 
@@ -287,8 +287,8 @@ header {
     font-size: 0.9rem;
     color: var(--highlight-grey);
     margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 10px;
+    margin-bottom: 0 auto 1rem auto;
+    letter-spacing: 7px;
 }
 
 .parallax-content .cta-button {
