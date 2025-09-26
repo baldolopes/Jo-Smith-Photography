@@ -349,7 +349,7 @@ header {
 
 .about-me-text p,
 .cta-item p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--text-dark);
     line-height: 1.6;
     max-width: 600px;
