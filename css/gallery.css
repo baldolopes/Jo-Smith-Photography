@@ -1,20 +1,54 @@
-/* === Mobile First - Base Styles === */
-.gallery-section {
-    padding: 3rem 1rem;
-    text-align: center;
-    background-color: #fff;
-    overflow-x: hidden;
+/* Fonts API */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* Define color variables for the "Scottish Loch  theme */
+:root {
+    /*Deep charcoal */
+    --bg-dark: #1E2426;
+
+    /*Soft Ivory*/
+    --text-light: #f0f0e6;
+
+    /* Muted Teal */
+    --accent-teal: #4A7C7D;
+    --accent-teal-darker: #3a6364;
+
+    /* Cool Grey */
+    --highlight-grey: #A0A6A8;
+
+    /* Use Soft Ivory also for light sections */
+    --bg-light: #F0F0E6;
+
+    /* Use Deep Charcoal for text on light backgrounds */
+    --text-dark: #1E2426;
 }
 
-.gallery-section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+/* === Mobile First - Base Styles === */
+.gallery-section {
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+/* 1. NATURE GALLERY (Slideshow Style) */
+.nature-gallery {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.nature-gallery .gallery-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--text-dark);
 }
 
 /* This is our main wrapper. It's fluid on mobile and will be constrained on larger screens. */
 .gallery-container {
-    margin: 0 auto;
+    max-width: 850px;
     /* This will center it when max-width is applied */
+    margin: 0 auto;
+    position: relative;
 }
 
 .slideshow-container {
@@ -26,12 +60,16 @@
     display: none;
 }
 
+.mySlides.active-slide {
+    display: block;
+}
+
 .mySlides img {
     width: 100%;
     height: auto;
     vertical-align: middle;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 .prev,
@@ -40,17 +78,12 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    padding: 16px;
+    color: var(--bg-light);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     transition: background-color 0.3s ease;
-    border-radius: 50%;
+    border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -61,6 +94,7 @@
 
 .next {
     right: 10px;
+    border-radius: 3px 0 0 3px;
 }
 
 .prev:hover,
@@ -69,7 +103,7 @@
 }
 
 .numbertext {
-    color: #f2f2f2;
+    color: var(--text-light);
     background-color: rgba(0, 0, 0, 0.5);
     font-size: 12px;
     padding: 6px 10px;
@@ -84,93 +118,144 @@
     text-align: center;
 }
 
-#caption {
+#caption-nature {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.1rem;
-    color: #333;
+    color: var(--text-dark);
     font-style: italic;
     line-height: 1.5;
     margin: 0;
+    padding: 0.5rem 0;
 }
 
+/* Thumbnails */
 .row {
     display: flex;
-    justify-content: flex-start;
-    /* Aligned to the left for mobile scrolling */
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 10px 0;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: #ccc #f1f1f1;
+    justify-content: center;
+    /* Allow thumbnails to wrap on small screens */
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
 }
 
 .column {
     flex: 0 0 auto;
-    padding: 0 4px;
 }
 
 .demo {
     opacity: 0.6;
-    width: 80px;
-    height: auto;
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
+    border: 2px solid transparent;
     transition: all 0.3s ease;
-    vertical-align: middle;
+}
+
+.demo:hover {
+    opacity: 1;
+    border-color: var(--highlight-grey);
 }
 
 .active,
-.demo:hover {
+.demo.active:hover {
     opacity: 1;
+    border-color: var(--accent-teal);
+    transform: scale(1.08);
+}
+
+/* WEDDING GALLERY (Masonry Style) */
+
+/*
+=====================================================
+  FINAL WEDDING GALLERY (Advanced Dense Packing Grid)
+=====================================================
+*/
+
+.wedding-gallery {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.wedding-gallery .gallery-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+.masonry-grid {
+    display: grid;
+    grid-gap: 1rem;
+
+    /* Define a flexible grid with 2 columns on mobile */
+    grid-template-columns: repeat(2, 1fr);
+
+    /* 
+     * *** THE KEY FIX IS HERE ***
+     * 'dense' tells the grid's auto-placement algorithm to attempt to
+     * fill in holes earlier in the grid if smaller items come up later.
+     * This is what prevents the blank spaces.
+    */
+
+    /* The magic property to prevent gaps */
+    grid-auto-flow: dense;
+    max-width: 1200px;
+    /* This centers the grid horizontally*/
+    margin: 0 auto;
+}
+
+.masonry-item {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.masonry-item img:hover {
     transform: scale(1.05);
 }
 
-
-/*
-========================================
-  TABLET AND DESKTOP RESPONSIVE STYLES
-========================================
+/* 
+ * *** ARTISTIC CONTROL ***
+ * Now we can confidently make certain images larger, knowing the
+ * 'dense' algorithm will fill in any potential gaps.
 */
 
+/* --- Make some items TALLER (vertical) --- */
+.masonry-item:nth-child(4),
+.masonry-item:nth-child(9),
+.masonry-item:nth-child(13) {
+    grid-row: span 2;
+}
+
+/* --- Make some items WIDER (landscape) --- */
+.masonry-item:nth-child(2),
+.masonry-item:nth-child(7),
+.masonry-item:nth-child(11) {
+    grid-column: span 2;
+}
+
+
+/* --- Responsive Layout for the Grid --- */
 @media (min-width: 768px) {
 
-    /* The only rule we need to constrain the entire gallery */
-    .gallery-container {
-        max-width: 85%;
-    }
-
-    .prev,
-    .next {
-        width: 45px;
-        height: 45px;
-        font-size: 24px;
-    }
-
-    .row {
-        justify-content: center;
-        /* Center the thumbnails inside the row */
-        overflow-x: hidden;
-        /* Hide the scrollbar as it's no longer needed */
-    }
-
-    .demo {
-        width: 100px;
+    /* On tablets, we increase the number of columns */
+    .masonry-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
 
-    /* On desktops, we make the container even more narrow for a better look */
-    .gallery-container {
-        max-width: 850px;
-    }
-
-    #caption {
-        font-size: 1.2rem;
-    }
-
-    .demo {
-        width: 120px;
+    /* On desktops, we use 4 columns */
+    .masonry-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

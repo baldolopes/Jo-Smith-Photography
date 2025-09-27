@@ -1,54 +1,63 @@
-// Espera a que todo el contenido del HTML esté cargado antes de ejecutar el script.
 document.addEventListener('DOMContentLoaded', function () {
+    // We create an object to hold the state for each gallery
+    const galleries = {};
 
-    // Comprueba si los elementos de la galería existen en la página actual.
-    const slides = document.getElementsByClassName("mySlides");
-    if (slides.length === 0) {
-        return; // Si no hay galería, no se ejecuta nada.
+    // Find all gallery containers on the page
+    const galleryContainers = document.querySelectorAll('.gallery-container');
+
+    // Initialize each gallery
+    galleryContainers.forEach((container, index) => {
+        const slides = container.querySelectorAll('.mySlides');
+        const dots = container.querySelectorAll('.demo');
+        const caption = container.querySelector('p[id^="caption-"]'); // Find caption by starting text
+
+        if (slides.length > 0) {
+            galleries[index] = {
+                slideIndex: 1,
+                slides: slides,
+                dots: dots,
+                caption: caption
+            };
+            showSlides(1, index); // Show the first slide of each gallery
+        }
+    });
+
+    // Make the functions globally available
+    window.plusSlides = function (n, galleryIndex) {
+        let newIndex = galleries[galleryIndex].slideIndex += n;
+        showSlides(newIndex, galleryIndex);
     }
 
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Asigna las funciones al objeto global 'window' para que los 'onclick' del HTML puedan encontrarlas.
-    window.plusSlides = function (n) {
-        showSlides(slideIndex += n);
+    window.currentSlide = function (n, galleryIndex) {
+        showSlides(n, galleryIndex);
     }
 
-    window.currentSlide = function (n) {
-        showSlides(slideIndex = n);
-    }
+    function showSlides(n, galleryIndex) {
+        const gallery = galleries[galleryIndex];
+        if (!gallery) return;
 
-    function showSlides(n) {
         let i;
-        const slides = document.getElementsByClassName("mySlides");
-        const dots = document.getElementsByClassName("demo");
-        const captionText = document.getElementById("caption");
+        let slideIndex = n;
 
-        // Bucle para volver al principio o al final
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
+        if (slideIndex > gallery.slides.length) { slideIndex = 1 }
+        if (slideIndex < 1) { slideIndex = gallery.slides.length }
 
-        // Oculta todas las imágenes grandes
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        gallery.slideIndex = slideIndex; // Update the current index for this gallery
+
+        for (i = 0; i < gallery.slides.length; i++) {
+            gallery.slides[i].classList.remove("active-slide");
+        }
+        for (i = 0; i < gallery.dots.length; i++) {
+            gallery.dots[i].classList.remove("active");
         }
 
-        // Quita la clase "active" de todas las miniaturas
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+        gallery.slides[slideIndex - 1].classList.add("active-slide");
+        gallery.dots[slideIndex - 1].classList.add("active");
+
+        gallery.dots[slideIndex - 1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+        if (gallery.caption) {
+            gallery.caption.innerHTML = gallery.dots[slideIndex - 1].title;
         }
-
-        // Muestra la imagen grande correcta
-        slides[slideIndex - 1].style.display = "block";
-
-        dots[slideIndex - 1].className += " active";
-
-        dots[slideIndex - 1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-
-        const activeImage = slides[slideIndex - 1].querySelector('img');
-
-        // Actualiza la descripción
-        captionText.innerHTML = dots[slideIndex - 1].title;
     }
 });
