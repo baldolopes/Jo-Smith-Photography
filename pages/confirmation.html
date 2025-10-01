@@ -35,45 +35,15 @@
 
     </header>
 
-    <main> <!-- Wrap main content in <main> tag for better semantics -->
-        <section class="contact-section-wrapper"> <!-- A wrapper for styling both form and map -->
-            <div class="contact-form-container">
-                <h2>Let's Connect!</h2>
-                <p class="contact-intro">Have a question, want to discuss a project, or just say hello? Feel free to reach out using the form below!</p>
-                
-                <form class="contact-form" id="myform" action="your-backend-script.php" method="POST" onsubmit="return validateForm()">
-                    <div class="form-group">
-                        <label for="name">Your Name</label> 
-                        <input type="text" id="name" name="name" placeholder="e.g., Jo Smith" required>
-                        <span id="nameError" class="error"></span>
-                    </div>
-                
-                    <div class="form-group">
-                        <label for="email">Your Email</label> 
-                        <input type="email" id="email" name="email" placeholder="e.g., your.email@example.com" required>
-                        <span id="emailError" class="error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Your Message</label> 
-                        <textarea id="message" name="message" cols="30" rows="10" placeholder="Tell me about your project or inquiry..." required></textarea>
-                        <span id="messageError" class="error"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <button type="submit" class="submit-btn">SEND MESSAGE</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="contact-map-container">
-                <h3>Our Location</h3>
-                <p>987 Brook Street, Dundee, DD5 2EA</p>
-                <!-- Google Maps embed for Dundee address -->
-                <div class="map-embed-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.085023348107!2d-2.973307584160356!3d56.467389083395916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488647e30d1d6a3f%3A0xb3c3b0f5b4b1a4a!2s987%20Brook%20St%2C%20Dundee%20DD5%202EA%2C%20UK!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus" 
-                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+    <main class="main-content">
+        <section class="confirmation-form-section">
+            <!-- <h1>Contact Us</h1> -->
+            <div class="confirmation-form">
+                <h3>Thank you!</h3><br>
+                <p>Thank you for getting in touch. <span id="storedName"></span></p><br>
+                <p>We've received your message and will be in touch within 24 hours. <span id="storedEmail"></span></p><br>
+                <p>In the meantime, make sure to follow us on social!</p>
+                <p id="storedMessage"></p>
             </div>
         </section>
     </main>
@@ -122,7 +92,7 @@
             </div>
         </footer>
 
-        <script src="../js/validation.js"></script>
+        <script src="../js/script.js"></script>
     </body>
 
 </html>

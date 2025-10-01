@@ -550,9 +550,14 @@ footer {
     font-weight: bold;
 }
 
-/* General styles for the contact section - Mobile First */
+.contact-page-container {
+    padding: 0 15px; /* Horizontal padding for small screens */
+    margin: 0 auto;
+}
+
+/* General styles for the contact form section - Mobile First */
 .contact-form-section {
-    width: 90%; /* Take up most of the width on small screens */
+    width: 100%; /* Take up full width within its parent container */
     margin: 20px auto; /* Centered with some vertical spacing */
     padding: 15px;
     background-color: #f9f9f9;
@@ -562,11 +567,47 @@ footer {
     font-family: Arial, sans-serif; /* Ensure this matches your main font */
 }
 
-.contact-form-section h3 {
-    font-size: 1.6em; /* Appropriate size for mobile headings */
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: 600;
+/* Main heading for the contact form section */
+.contact-form-section h2 {
+    font-size: 1.8em; /* Appropriate size for mobile headings */
+    color: #2c3e50; /* A darker, professional color */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-section-wrapper {
+    width: 90%; /* Occupy 90% width on small screens */
+    margin: 30px auto; /* Centered with vertical spacing */
+    padding: 0; /* No padding on the wrapper itself for mobile */
+    display: flex;
+    flex-direction: column; /* Stack form and map vertically on mobile */
+    gap: 30px; /* Space between form and map */
+}
+
+/* Styles for the contact form container - Mobile First */
+.contact-form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+    padding: 25px; /* Padding inside the form container */
+    text-align: center;
+    font-family: Arial, sans-serif; /* Ensure this matches your main font */
+}
+
+/* Main heading for the contact form section */
+.contact-form-container h2 {
+    font-size: 1.8em; /* Appropriate size for mobile headings */
+    color: #2c3e50; /* A darker, professional color */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Intro paragraph for the contact form section */
+.contact-form-container .contact-intro {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
 }
 
 /* Form specific styles - Mobile First */
@@ -599,7 +640,7 @@ footer {
     font-size: 0.9em; /* Smaller font size for input text */
     color: #333;
     box-sizing: border-box; /* Include padding and border in the total width */
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input[type="text"]:focus,
@@ -607,7 +648,7 @@ footer {
 .form-group textarea:focus {
     border-color: #007bff;
     outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.15); /* Lighter shadow on focus */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.2); /* Slightly more prominent shadow on focus */
 }
 
 .form-group textarea {
@@ -629,12 +670,12 @@ footer {
     width: 100%; /* Full width button on mobile */
     display: block; /* Ensures it takes full width and new line */
     margin-top: 15px;
+    text-transform: uppercase; /* Make button text uppercase */
 }
 
 .submit-btn:hover {
     background-color: #0056b3;
-    /* No transform on hover for mobile, as hover isn't typical.
-       Only keep if you intend it for touch devices (less common) */
+    /* No transform on hover for mobile, as hover isn't typical. */
 }
 
 .submit-btn:active {
@@ -647,6 +688,41 @@ footer {
     font-size: 0.85em; /* Smaller error text for mobile */
     margin-top: 4px;
     display: block;
+}
+
+/* Styling for the contact map container - Mobile First */
+.contact-map-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+}
+
+.contact-map-container h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.contact-map-container p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Map embed wrapper to control aspect ratio if needed, or just for styling */
+.map-embed-wrapper {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures map corners are rounded */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.map-embed-wrapper iframe {
+    border: 0; /* Remove default iframe border */
+    display: block; /* Remove extra space below iframe */
 }
 
 /* Media query for tablet devices (min-width: 767px) */
@@ -809,24 +885,27 @@ footer {
         max-width: 500px;
     }
 
-    .contact-form-section {
-        max-width: 650px; /* Max width for tablets */
-        margin: 40px auto;
-        padding: 30px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Stronger shadow for larger screens */
+    .contact-section-wrapper {
+        width: 65%; /* Slightly wider for tablets */
+        max-width: 960px; /* Constrain overall width */
+        margin: 50px auto; /* More vertical spacing */
+        gap: 40px; /* Increased space between form and map */
     }
 
-    .contact-form-section h3 {
-        font-size: 2em; /* Larger heading */
-        margin-bottom: 30px;
+    .contact-form-container {
+        padding: 40px; /* Larger padding for tablets */
     }
 
-    .contact-form {
-        gap: 20px; /* Larger gap between form groups */
+    .contact-form-container h2 {
+        font-size: 2.5em; /* Larger heading */
+    }
+
+    .contact-form-container .contact-intro {
+        font-size: 1.05em;
     }
 
     .form-group label {
-        font-size: 1.1em; /* Larger labels */
+        font-size: 1rem; /* Standard label size */
         margin-bottom: 8px;
     }
 
@@ -834,11 +913,14 @@ footer {
     .form-group input[type="email"],
     .form-group textarea {
         padding: 12px 15px; /* Larger padding for inputs */
-        font-size: 1em; /* Larger input text */
+        font-size: 1em; /* Standard input text size */
+        color: var(--highlight-grey);
+        font-style: italic;
+        font-size: 0.9rem;
     }
 
     .form-group textarea {
-        min-height: 120px; /* Taller textarea */
+        min-height: 140px; /* Taller textarea */
     }
 
     .submit-btn {
@@ -846,7 +928,8 @@ footer {
         padding: 15px 30px; /* Larger padding for button */
         font-size: 1.1em; /* Larger button text */
         margin-top: 20px;
-        align-self: flex-start; /* Aligns button to the left in flex column */
+        align-items: center; /* Aligns button to the left in flex column */
+        justify-content: center;
     }
 
     .submit-btn:hover {
@@ -854,11 +937,23 @@ footer {
         transform: translateY(-2px); /* Re-enable hover effect for desktop */
     }
 
+    .contact-form .form-group:last-of-type{
+        display: flex;
+        justify-content: center;
+    }
+
     .error {
         font-size: 0.9em; /* Standard error text size */
         margin-top: 5px;
     }
 
+    .contact-map-container {
+        padding: 40px; /* Larger padding for tablets */
+    }
+
+    .contact-map-container h3 {
+        font-size: 1.8em;
+    }
 }
 
 /* Media query for desktop devices (min-width: 991px) */
@@ -905,13 +1000,45 @@ footer {
         margin: 0 auto;
     }
 
-    .contact-form-section {
-        max-width: 800px; /* Even larger max width for desktops */
-        padding: 40px;
+    .contact-section-wrapper {
+        flex-direction: column; /* Arrange form and map side-by-side on desktop */
+        align-items: center; /* Align contents to the top */
+        width: 100%;
+        max-width: 1200px; /* Even wider layout for desktops */
+        margin: 50px auto;
     }
 
-    .contact-form-section h3 {
-        font-size: 2.5em; /* Even larger heading */
+    .contact-form-container {
+        width: 60%;
+        padding: 50px; /* Even larger padding for desktops */
+    }
+
+    .contact-map-container {
+        width: 80%;
+        padding: 50px; /* Even larger padding for desktops */
+    }
+    .contact-form-container{
+        margin-bottom: 40px;
+    }
+
+    .contact-form-container h2 {
+        font-size: 3em; /* Even larger heading for desktops */
+    }
+
+    .contact-form-container .contact-intro {
+        font-size: 1.1em;
+    }
+
+    .contact-map-container h3 {
+        font-size: 2em;
+    }
+
+    .contact-map-container p {
+        font-size: 1.1em;
+    }
+
+    .map-embed-wrapper iframe {
+        height: 400px; /* Taller map for desktops */
     }
 
 }
