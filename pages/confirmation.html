@@ -36,15 +36,29 @@
     </header>
 
     <main class="main-content">
-        <section class="confirmation-form-section">
-            <!-- <h1>Contact Us</h1> -->
-            <div class="confirmation-form">
-                <h3>Thank you!</h3><br>
-                <p>Thank you for getting in touch. <span id="storedName"></span></p><br>
-                <p>We've received your message and will be in touch within 24 hours. <span id="storedEmail"></span></p><br>
-                <p>In the meantime, make sure to follow us on social!</p>
-                <p id="storedMessage"></p>
-            </div>
+        <section class="confirmation-section-wrapper">
+            <div class="confirmation-card">
+                <div class="success-icon">&#10003;</div> 
+                
+                <h1>Thank you!</h1>
+                
+                <p class="main-message">
+                    Your message has been received successfully.
+                    <span id="storedName"></span>
+                </p>
+                <p class="secondary-message">
+                    We appreciate you reaching out! We'll be in touch within **24 hours**.
+                </p>
+                
+                <div class="confirmation-actions">
+                    <p>In the meantime, feel free to explore our work or connect with us on social media:</p>
+                    
+                    <a href="/index.html" class="home-btn">
+                        Back to Home
+                    </a>
+                </div>
+    
+                </div>
         </section>
     </main>
 

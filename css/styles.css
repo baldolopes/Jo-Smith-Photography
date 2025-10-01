@@ -725,6 +725,106 @@ footer {
     display: block; /* Remove extra space below iframe */
 }
 
+/* ======================================================= */
+/* STYLES FOR CONFIRMATION.HTML (DARK MODE CARD) */
+/* ======================================================= */
+
+.main-content {
+    /* Use Flexbox to center the card vertically and horizontally on the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Ensure the card is vertically centered */
+    padding: 40px 20px;
+    /* Main Content Background remains light */
+    background-color: var(--bg-light); 
+}
+
+.confirmation-section-wrapper {
+    width: 100%;
+    max-width: 600px; /* Maximum width for the confirmation container */
+    margin: auto;
+}
+
+.confirmation-card {
+    /* CARD BACKGROUND: Deep Charcoal */
+    background-color: var(--bg-dark); 
+    padding: 50px 30px;
+    border-radius: 12px;
+    /* Soft shadow on a dark card is usually less noticeable, but can stay */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+    text-align: center;
+    /* TOP BORDER: Muted Teal */
+    border-top: 5px solid var(--accent-teal); 
+}
+
+/* Success icon style */
+.success-icon {
+    font-size: 3em;
+    /* ICON COLOR: Muted Teal */
+    color: var(--accent-teal); 
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 5px 15px;
+    /* ICON BORDER: Muted Teal */
+    border: 3px solid var(--accent-teal); 
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.confirmation-card h1 {
+    font-size: 2.5em;
+    /* HEADING COLOR: Soft Ivory */
+    color: var(--text-light); 
+    margin-bottom: 25px;
+}
+
+.main-message {
+    font-size: 1.2em;
+    /* TEXT COLOR: Soft Ivory (main text) */
+    color: var(--text-light); 
+    margin-bottom: 15px;
+}
+
+.secondary-message {
+    font-size: 1em;
+    /* SECONDARY TEXT COLOR: Highlight Grey for subtle contrast */
+    color: var(--highlight-grey); 
+    margin-bottom: 30px;
+}
+
+/* Home button styles */
+.confirmation-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    /* SEPARATOR LINE: Highlight Grey */
+    border-top: 1px solid var(--highlight-grey); 
+}
+
+.confirmation-actions p {
+    /* Ensure action text is also light */
+    color: var(--text-light);
+}
+
+.home-btn {
+    display: inline-block;
+    /* BUTTON BACKGROUND: Darker Teal for primary action */
+    background-color: var(--accent-teal-darker); 
+    color: var(--text-light); /* Soft Ivory text on button */
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-btn:hover {
+    /* HOVER COLOR: Muted Teal (Lighter shade for hover effect) */
+    background-color: var(--accent-teal); 
+    transform: translateY(-2px);
+}
+
 /* Media query for tablet devices (min-width: 767px) */
 @media only screen and (min-width: 767px) {
 
