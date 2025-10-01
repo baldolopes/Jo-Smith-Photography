@@ -550,6 +550,105 @@ footer {
     font-weight: bold;
 }
 
+/* General styles for the contact section - Mobile First */
+.contact-form-section {
+    width: 90%; /* Take up most of the width on small screens */
+    margin: 20px auto; /* Centered with some vertical spacing */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+    text-align: center;
+    font-family: Arial, sans-serif; /* Ensure this matches your main font */
+}
+
+.contact-form-section h3 {
+    font-size: 1.6em; /* Appropriate size for mobile headings */
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Form specific styles - Mobile First */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Smaller gap for mobile */
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 10px; /* Smaller margin for mobile */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px; /* Smaller margin for mobile */
+    font-size: 0.95em; /* Smaller font size for labels */
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px; /* Smaller padding for mobile inputs */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em; /* Smaller font size for input text */
+    color: #333;
+    box-sizing: border-box; /* Include padding and border in the total width */
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.15); /* Lighter shadow on focus */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px; /* Slightly smaller min-height for mobile */
+}
+
+/* Submit button styles - Mobile First */
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px; /* Smaller padding for mobile button */
+    border: none;
+    border-radius: 5px;
+    font-size: 1em; /* Mobile-friendly font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Full width button on mobile */
+    display: block; /* Ensures it takes full width and new line */
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    /* No transform on hover for mobile, as hover isn't typical.
+       Only keep if you intend it for touch devices (less common) */
+}
+
+.submit-btn:active {
+    transform: translateY(0); /* Ensure no unintended transform on touch */
+}
+
+/* Styles for error messages - Mobile First */
+.error {
+    color: #dc3545;
+    font-size: 0.85em; /* Smaller error text for mobile */
+    margin-top: 4px;
+    display: block;
+}
+
 /* Media query for tablet devices (min-width: 767px) */
 @media only screen and (min-width: 767px) {
 
@@ -710,6 +809,56 @@ footer {
         max-width: 500px;
     }
 
+    .contact-form-section {
+        max-width: 650px; /* Max width for tablets */
+        margin: 40px auto;
+        padding: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Stronger shadow for larger screens */
+    }
+
+    .contact-form-section h3 {
+        font-size: 2em; /* Larger heading */
+        margin-bottom: 30px;
+    }
+
+    .contact-form {
+        gap: 20px; /* Larger gap between form groups */
+    }
+
+    .form-group label {
+        font-size: 1.1em; /* Larger labels */
+        margin-bottom: 8px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 12px 15px; /* Larger padding for inputs */
+        font-size: 1em; /* Larger input text */
+    }
+
+    .form-group textarea {
+        min-height: 120px; /* Taller textarea */
+    }
+
+    .submit-btn {
+        width: auto; /* Auto width on larger screens */
+        padding: 15px 30px; /* Larger padding for button */
+        font-size: 1.1em; /* Larger button text */
+        margin-top: 20px;
+        align-self: flex-start; /* Aligns button to the left in flex column */
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px); /* Re-enable hover effect for desktop */
+    }
+
+    .error {
+        font-size: 0.9em; /* Standard error text size */
+        margin-top: 5px;
+    }
+
 }
 
 /* Media query for desktop devices (min-width: 991px) */
@@ -756,6 +905,13 @@ footer {
         margin: 0 auto;
     }
 
+    .contact-form-section {
+        max-width: 800px; /* Even larger max width for desktops */
+        padding: 40px;
+    }
 
+    .contact-form-section h3 {
+        font-size: 2.5em; /* Even larger heading */
+    }
 
 }

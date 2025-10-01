@@ -35,9 +35,34 @@
 
     </header>
 
-    <body>
-        <h1>Jo Smith Photography - Contact Page</h1>
+    <section class="contact-form-section">
+        <h3>Use the form to get in touch</h3>
+        <form class="contact-form" id="myform" action="" onsubmit="return validateForm()">
+            <div class="form-group" >
+                <label for="name">Enter your name</label> 
+                <input type="text" id="name" name="name" placeholder="ej:Jo Smith" required>
+                <span id="nameError" class="error"></span>
+          </div>
+        
+          <div class="form-group">
+                <label for="email">Enter your email</label> 
+                <input type="email" id="email" name="email" placeholder="ej:josmithphotography@gmail.com.com" required>
+                <span id="emailError" class="error"></span>
+            </div>
 
+            <div class="form-group">
+                <label for="message">Enter your message</label> 
+                <textarea name="" id="message" name="message" cols="30" rows="10" placeholder="" required> </textarea>
+                <span id="messageError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </div>
+        </form>
+</section>
+
+</body>
         <footer>
             <div class="footer-content">
                 <img src="/media/logo.png" alt="Jo Smith Photography Logo" class="footer-logo">
