@@ -4,10 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ====================================================== -->
+    <!-- ============== SEO METADATA (FUNDAMENTAL) ============== -->
+    <!-- ====================================================== -->
+
+    <!-- Título de la Página (MUY IMPORTANTE) -->
+    <!-- Es claro, incluye tu nombre y ubicación. -->
+    <title>Contacta a Jo Smith | Fotógrafa en Dundee | Reserva una Sesión</title>
+
+    <!-- Descripción de la Página (MUY IMPORTANTE) -->
+    <!-- Explica qué puede hacer el usuario aquí: contactar, reservar, preguntar. -->
+    <meta name="description"
+        content="Ponte en contacto con Jo Smith Photography en Dundee. Usa el formulario para preguntas, reservas de eventos o para discutir un proyecto. Encuentra mi teléfono, email y dirección.">
+
+    <!-- Autor y Copyright -->
+    <meta name="author" content="Jo Smith">
+    <meta name="copyright" content="Copyright 2025 Jo Smith Photography. All Rights Reserved.">
+
+    <!-- URL Canónica (IMPORTANTE) -->
+    <!-- La URL oficial de esta página. -->
+    <!-- Reemplaza "https://www.josmithphoto.com" con tu dominio real. -->
+    <link rel="canonical" href="https://josmithphotographer.netlify.app//pages/contact.html">
+
+    <!-- Favicon -->
     <link rel="icon" href="/media/favicon.png" type="image/png">
-    <title>Jo Smith - Photography</title>
+
+    <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/services.css">
+    <link rel="stylesheet" href="/css/contact.css"> <!-- Asegúrate que el CSS sea el correcto -->
+
+    <!-- ====================================================== -->
+    <!-- ========= SOCIAL MEDIA METADATA (OPEN GRAPH) ========= -->
+    <!-- ====================================================== -->
+
+    <meta property="og:title" content="Contacta a Jo Smith Photography">
+    <meta property="og:description" content="¿Listo para capturar tus momentos? Hablemos de tu proyecto.">
+    <!-- Usar tu retrato aquí es una gran idea. Añade un toque personal y de confianza. -->
+    <meta property="og:image"
+        content="https://https://josmithphotographer.netlify.app/media/images/about/jo-smith-portrait.jpg">
+    <meta property="og:url" content="https://josmithphotographer.netlify.app//pages/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jo Smith Photography">
+
+    <!-- ====================================================== -->
+    <!-- ============ TWITTER CARD METADATA ============ -->
+    <!-- ====================================================== -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contacta a Jo Smith Photography">
+    <meta name="twitter:description" content="¿Listo para capturar tus momentos? Hablemos de tu proyecto.">
+    <meta name="twitter:image"
+        content="https://josmithphotographer.netlify.app//media/images/about/jo-smith-portrait.jpg">
+
 </head>
 
 <body>
@@ -29,7 +78,7 @@
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/pages/about.html">About</a></li>
                 <li><a href="/pages/gallery.html">Gallery</a></li>
-                <li><a href="/pages/services.html" >Services</a></li>
+                <li><a href="/pages/services.html">Services</a></li>
                 <li><a href="/pages/contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
@@ -40,24 +89,27 @@
         <section class="contact-section-wrapper"> <!-- A wrapper for styling both form and map -->
             <div class="contact-form-container">
                 <h2>Let's Connect!</h2>
-                <p class="contact-intro">Have a question, want to discuss a project, or just say hello? Feel free to reach out using the form below!</p>
-                
-                <form class="contact-form" id="myform" action="your-backend-script.php" method="POST" onsubmit="return validateForm()">
+                <p class="contact-intro">Have a question, want to discuss a project, or just say hello? Feel free to
+                    reach out using the form below!</p>
+
+                <form class="contact-form" id="myform" action="your-backend-script.php" method="POST"
+                    onsubmit="return validateForm()">
                     <div class="form-group">
-                        <label for="name">Your Name</label> 
+                        <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="e.g., Jo Smith" required>
                         <span id="nameError" class="error"></span>
                     </div>
-                
+
                     <div class="form-group">
-                        <label for="email">Your Email</label> 
+                        <label for="email">Your Email</label>
                         <input type="email" id="email" name="email" placeholder="e.g., your.email@example.com" required>
                         <span id="emailError" class="error"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Your Message</label> 
-                        <textarea id="message" name="message" cols="30" rows="10" placeholder="Tell me about your project or inquiry..." required></textarea>
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" cols="30" rows="10"
+                            placeholder="Tell me about your project or inquiry..." required></textarea>
                         <span id="messageError" class="error"></span>
                     </div>
 
@@ -72,8 +124,10 @@
                 <p>987 Brook Street, Dundee, DD5 2EA</p>
                 <!-- Google Maps embed for Dundee address -->
                 <div class="map-embed-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.085023348107!2d-2.973307584160356!3d56.467389083395916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488647e30d1d6a3f%3A0xb3c3b0f5b4b1a4a!2s987%20Brook%20St%2C%20Dundee%20DD5%202EA%2C%20UK!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus" 
-                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.085023348107!2d-2.973307584160356!3d56.467389083395916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488647e30d1d6a3f%3A0xb3c3b0f5b4b1a4a!2s987%20Brook%20St%2C%20Dundee%20DD5%202EA%2C%20UK!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
