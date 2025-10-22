@@ -157,18 +157,6 @@ header {
     color: var(--accent-teal);
 }
 
-.parallax-container {
-    height: 90vh;
-    /* This is crucial for positioning children */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* Hide anything that might stick out */
-    overflow: hidden;
-}
-
 /* This wrapper holds all the background images*/
 @keyframes softFlickerEffect {
 
@@ -206,6 +194,15 @@ header {
     }
 }
 
+.hero-parallax-wrapper {
+    height: 90vh; /* Or whatever height you want your hero section to be */
+    position: relative; /* Crucial: This makes it the positioning context for its absolutely positioned children */
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;     /* Vertically center the content */
+    overflow: hidden;        /* Hide anything that might stick out, like overflow during transitions */
+    text-align: center;      /* Center text within the parallax-content */
+}
 
 /* --- And make sure your .parallax-bg-slide.active rule uses the NEW animation name --- */
 .parallax-bg-slide.active {
@@ -221,16 +218,15 @@ header {
 }
 
 
-/* --- STEP 2: Replace your existing .parallax-bg-slide styles --- */
+/* This wrapper holds all the background images*/
 .parallax-slideshow {
-    position: absolute;
+    position: absolute; /* Positioned relative to .hero-parallax-wrapper */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 1; /* Make sure it's behind the content */
     background-color: #000;
-    /* A black background for a more dramatic flicker */
 }
 
 /* Styles for each individual background slide image */
@@ -242,10 +238,12 @@ header {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    /* All slides are hidden by default */
 }
 
 .parallax-content {
+    position: relative; /* Needed for z-index to work, places it above the background */
+    z-index: 2; /* Make sure content is above the slideshow */
+
     background: rgba(0, 0, 0, 0.3);
     color: var(--text-light);
     padding: 2rem 1.5rem;
@@ -255,12 +253,7 @@ header {
     max-width: 700px;
     box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.1);
-
-    /* ---- Stacking ---- */
-    position: relative;
-    z-index: 2;
 }
-
 .parallax-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp (3rem, 10vw, 4rem);
