@@ -1,1 +1,1 @@
-# dignansCatering
+# Jo Smith Photography

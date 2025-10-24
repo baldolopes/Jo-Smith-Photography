@@ -32,7 +32,7 @@
 /* --- Pricing Section --- */
 .services-pricing {
     background-color: var(--bg-dark);
-    padding: 4rem 1.5rem;
+    padding: 1rem 1.5rem;
 }
 
 .pricing-grid {
@@ -41,6 +41,7 @@
     /* One column on mobile */
     gap: 2rem;
     max-width: 1200px;
+    margin-top: 1rem;
     margin: 0 auto;
 }
 
@@ -144,6 +145,6 @@
 
     .services-pricing,
     .art-prints-section {
-        padding: 6rem 1.5rem;
+        padding: 1rem 1.5rem;
     }
 }

@@ -1,3 +1,2 @@
 User-agent: *
 https://josmithphotographer.netlify.app/pages/confirmation.html
-Allow: https://dignnanscatering.netlify.app/sitemap.xml
