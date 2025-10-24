@@ -49,9 +49,12 @@
 }
 
 .nature-gallery .gallery-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     color: var(--text-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* --- Slideshow Container & Structure --- */
