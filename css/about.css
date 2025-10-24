@@ -1,46 +1,51 @@
-/* Fonts API */
+/* ==========================================================================
+   1. FONT IMPORTS & GLOBAL VARIABLES
+   ========================================================================== */
+
+/* Import Google Fonts for consistent typography across the site */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
 
-
-/* Define color variables for the "Scottish Loch  theme */
+/* Define color variables for the "Scottish Loch" theme for easy reuse and maintenance */
 :root {
-    /*Deep charcoal */
+    /* Deep charcoal for dark backgrounds and text on light backgrounds */
     --bg-dark: #1E2426;
+    --text-dark: #1E2426;
 
-    /*Soft Ivory*/
+    /* Soft Ivory for light backgrounds and text on dark backgrounds */
     --text-light: #f0f0e6;
-
-    /* Muted Teal */
-    --accent-teal: #4A7C7D;
-    --accent-teal-darker: #3a6364;
-
-    /* Cool Grey */
-    --highlight-grey: #A0A6A8;
-
-    /* Use Soft Ivory also for light sections */
     --bg-light: #F0F0E6;
 
-    /* Use Deep Charcoal for text on light backgrounds */
-    --text-dark: #1E2426;
+    /* Muted Teal for primary accents and interactive elements */
+    --accent-teal: #4A7C7D;
+    --accent-teal-darker: #3a6364;
+    /* A darker version for hover states */
+
+    /* Cool Grey for subtitles and secondary text */
+    --highlight-grey: #A0A6A8;
 }
 
-/* --- ABOUT PAGE SPECIFIC STYLES --- */
+/* ==========================================================================
+   2. ABOUT PAGE SPECIFIC STYLES
+   ========================================================================== */
 
-/* Hero Section for About Page */
+/* --- Hero Section --- */
+
 .about-hero-section {
     position: relative;
+    /* Establishes a positioning context for absolute children (overlay, content) */
     height: 70vh;
+    /* Sets the hero to be 70% of the viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--text-light);
-    /* Important for positioning overlay and pseudo-elements */
     overflow: hidden;
+    /* Prevents pseudo-elements from bleeding outside the container */
 }
 
-/* Base image for the hero section */
+/* Uses a pseudo-element to create the background image layer */
 .about-hero-section::before {
     content: '';
     position: absolute;
@@ -52,10 +57,12 @@
     background-size: cover;
     background-position: center;
     filter: brightness(0.6) grayscale(0.2);
+    /* Darkens and slightly desaturates the image */
     z-index: 0;
+    /* Places the background image behind the overlay and content */
 }
 
-/* Optional overlay for more consistent darkening/styling */
+/* A separate overlay for a consistent gradient, improving text readability */
 .about-hero-image-overlay {
     position: absolute;
     top: 0;
@@ -64,23 +71,28 @@
     height: 100%;
     background: linear-gradient(to bottom, rgba(30, 36, 38, 0.4), rgba(30, 36, 38, 0.7));
     z-index: 1;
+    /* Sits on top of the background image but below the text content */
 }
 
+/* The container for the text content */
 .about-hero-content {
     position: relative;
+    /* Ensures it's not affected by the absolute positioning of siblings */
     z-index: 2;
+    /* Sits on top of all other layers (image and overlay) */
     padding: 1.5rem;
     max-width: 800px;
 }
 
 .about-hero-title {
     font-family: 'Playfair Display', serif;
-    /* CORREGIDO: Añadido la coma en clamp() */
+    /* Responsive font size: min 3rem, scales with 8% of viewport width, max 5rem */
     font-size: clamp(3rem, 8vw, 5rem);
     margin-bottom: 0.8rem;
     line-height: 1.1;
     color: var(--bg-light);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    /* Adds depth to the text */
 }
 
 .about-hero-subtitle {
@@ -92,19 +104,20 @@
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
-/* Introduction Section */
+/* --- Introduction Section --- */
+
 .about-intro-section {
     background-color: var(--bg-light);
     color: var(--text-dark);
     padding: 4rem 1.5rem;
 }
 
-/* CORREGIDO: Nombre de clase de 'abput-intro-content' a 'about-intro-content' */
 .about-intro-content {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    /* Stacks text and image vertically on mobile (mobile-first) */
     align-items: center;
     gap: 3rem;
 }
@@ -128,21 +141,24 @@
 }
 
 .about-intro-image {
-    /* Prevent image from shrinking */
     flex-shrink: 0;
+    /* Prevents the image container from shrinking in flex layouts */
 }
 
 .about-intro-image img {
     width: 280px;
     height: 280px;
     border-radius: 50%;
+    /* Creates a circular shape */
     object-fit: cover;
+    /* Ensures the image covers the area without distortion */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    /* Accent border around the image */
     border: 6px solid var(--accent-teal);
+    /* Adds an accent border */
 }
 
-/* Philosophy Section */
+/* --- Philosophy Section --- */
+
 .about-philosophy-section {
     background-color: var(--bg-dark);
     color: var(--text-light);
@@ -162,20 +178,21 @@
     color: var(--bg-light);
 }
 
-/* CORREGIDO: Nombre de clase de 'philosopy-grid' a 'philosophy-grid' */
 .philosophy-grid {
     display: grid;
     gap: 2.5rem;
-    /* Single column on mobile */
     grid-template-columns: 1fr;
+    /* Single column layout for mobile */
 }
 
 .philosophy-item {
     background-color: rgba(74, 124, 125, 0.15);
+    /* Semi-transparent background */
     padding: 2.5rem 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(74, 124, 125, 0.3);
+    /* Subtle border */
 }
 
 .philosophy-item h3 {
@@ -185,15 +202,15 @@
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    /* En móvil, centrar el icono y el texto */
     justify-content: center;
+    /* On mobile, center the icon and text */
     gap: 0.8rem;
-    /* Ajustado el gap */
 }
 
 .philosophy-item h3 .icon {
     font-size: 2rem;
     line-height: 1;
+    /* Prevents extra spacing around the icon emoji */
 }
 
 .philosophy-item p {
@@ -202,27 +219,31 @@
     color: var(--highlight-grey);
 }
 
-/* Adjustments for the CTA section to fit the About page */
+/* --- Call to Action (CTA) Section --- */
+
+/* Overrides for the CTA section to fit the About page theme */
 .about-cta-section {
-    /* New background for About CTA */
     background-image: linear-gradient(rgba(30, 36, 38, 0.5), rgba(30, 36, 38, 0.7)), url("/media/images/about/about-cta-bg.jpg");
-    /* Changed from fixed for less distraction */
     background-attachment: scroll;
+    /* Changed from 'fixed' to prevent parallax distraction */
 }
 
-/* Responsive adjustments for About Page */
-/* Media query for Tablets */
+/* ==========================================================================
+   3. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
+/* --- Tablet Styles (767px and up) --- */
 @media only screen and (min-width: 767px) {
     .about-intro-content {
-        display: flex;
         flex-direction: row;
+        /* Changes layout to side-by-side */
         text-align: left;
         align-items: center;
         justify-content: center;
         max-width: 1100px;
-        margin: 0 auto;
     }
 
+    /* Assigns space distribution for text and image */
     .about-intro-text {
         flex-basis: 60%;
     }
@@ -232,26 +253,24 @@
         max-width: 400px;
         display: flex;
         justify-content: center;
-        text-align: center;
     }
 
     .about-intro-image img {
         width: 300px;
         height: 300px;
-        object-fit: cover;
-        border-radius: 50%;
         border: 6px solid #ffffff;
+        /* Switched to white for better contrast on this layout */
         box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
     }
 
-
     .philosophy-grid {
         grid-template-columns: repeat(2, 1fr);
+        /* Two-column layout for the philosophy section */
     }
 
     .philosophy-item h3 {
-        /* En tablet/desktop, alinear a la izquierda */
         justify-content: flex-start;
+        /* On tablet/desktop, align icon and text to the left */
     }
 
     .philosophy-item {
@@ -259,22 +278,26 @@
     }
 }
 
-/* Media query for Desktop  */
+/* --- Desktop Styles (991px and up) --- */
 @media only screen and (min-width: 991px) {
     .about-intro-text {
         max-width: none;
+        /* Removes the width constraint from mobile */
     }
 
     .about-intro-image img {
         width: 350px;
         height: 350px;
+        /* Make the portrait slightly larger on desktops */
     }
 
     .philosophy-grid {
         grid-template-columns: repeat(3, 1fr);
+        /* Three-column layout for desktops */
     }
 
     .about-cta-section .cta-content-wrapper {
         max-width: 900px;
+        /* Constrains the width of the CTA text for better readability */
     }
 }

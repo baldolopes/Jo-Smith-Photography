@@ -1,7 +1,16 @@
+<!--
+  ================================================================================
+  FILE: services.html
+  DESCRIPTION: Details the photography services offered by Jo Smith, including
+               event photography, commercial contracts, and fine art print sales.
+               This page is crucial for converting visitors into clients.
+  ================================================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Basic page setup and character encoding -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,39 +18,38 @@
     <!-- ============== ESSENTIAL SEO METADATA ============== -->
     <!-- ====================================================== -->
 
-    <!-- Page Title (VERY IMPORTANT) -->
-    <!-- This title is specific, includes keywords, location, and your name. -->
+    <!-- Page Title: Specific, includes keywords, location, and name for strong SEO. -->
     <title>Photography Services in Dundee | Event, Commercial & Art Prints | Jo Smith</title>
 
-    <!-- Page Description (VERY IMPORTANT) -->
-    <!-- This acts as your "ad" in search results. It summarizes your offerings clearly. -->
+    <!-- Page Description: Summarizes offerings for search engine results. -->
     <meta name="description"
         content="Explore professional photography services by Jo Smith in Dundee. Specializing in event coverage, commercial contracts, and the sale of fine art nature prints. Contact for a quote.">
 
-    <!-- Author and Copyright -->
+    <!-- Author and Copyright information -->
     <meta name="author" content="Jo Smith">
     <meta name="copyright" content="Copyright 2025 Jo Smith Photography. All Rights Reserved.">
 
-    <!-- Canonical URL (IMPORTANT) -->
-    <!-- The official URL for this specific page. -->
-    <!-- Replace "https://www.josmithphoto.com" with your actual domain. -->
+    <!-- Canonical URL: The official URL for this page to prevent duplicate content issues. -->
     <link rel="canonical" href="https://josmithphotographer.netlify.app//pages/services.html">
 
-    <!-- Favicon -->
+    <!-- Favicon: The small icon that appears in the browser tab. -->
     <link rel="icon" href="/media/images/favicon.png" type="image/png">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/services.css">
+    <!-- ====================================================== -->
+    <!-- =================== STYLESHEETS ==================== -->
+    <!-- ====================================================== -->
+
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Site-wide global styles -->
+    <link rel="stylesheet" href="/css/services.css"> <!-- Styles specific to this page -->
 
     <!-- ====================================================== -->
     <!-- ========= SOCIAL MEDIA METADATA (OPEN GRAPH) ========= -->
     <!-- ====================================================== -->
-    <!-- This controls how the page looks when shared on Facebook, WhatsApp, etc. -->
+    <!-- This controls how the page looks when shared on platforms like Facebook, WhatsApp, etc. -->
 
     <meta property="og:title" content="Photography Services | Jo Smith | Dundee">
     <meta property="og:description" content="Professional event, commercial, and fine art photography services.">
-    <!-- Choose an engaging image for the preview. This one is dynamic. Must be a full, absolute URL. -->
+    <!-- Uses a dynamic service image for the social share preview. Must be a full, absolute URL. -->
     <meta property="og:image"
         content="https://josmithphotographer.netlify.app//media/images/services/private_events.jpg">
     <meta property="og:url" content="https://josmithphotographer.netlify.app//pages/services.html">
@@ -58,12 +66,16 @@
     <meta name="twitter:description" content="Professional event, commercial, and fine art photography services.">
     <meta name="twitter:image"
         content="https://josmithphotographer.netlify.app//media/images/services/private_events.jpg">
-    <!-- If you have a Twitter handle, add it here. -->
     <!-- <meta name="twitter:creator" content="@josmithphoto"> -->
 
 </head>
 
 <body>
+
+    <!-- ==========================================================================
+       SECTION: SITE HEADER
+       This is the main header, consistent across all pages.
+    ========================================================================== -->
     <header>
         <a href="/index.html" class="logo-link">
             <img class="logo" src="/media/images/logo.png" alt="Jo Smith - Photography">
@@ -78,6 +90,7 @@
                 <img class="icon-close-menu" src="/media/images/x-circle-fill.svg" alt="Close Menu Icon">
             </button>
 
+            <!-- Main navigation links. The 'active' class highlights the current page. -->
             <ul class="nav-list">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/pages/about.html">About</a></li>
@@ -86,132 +99,138 @@
                 <li><a href="/pages/contact.html">Contact</a></li>
             </ul>
         </nav>
-
     </header>
 
-    <body>
-        <main>
+    <!-- ==========================================================================
+       SECTION: MAIN CONTENT
+       Contains all unique content for the services page.
+       NOTE: The duplicate <body> tag has been removed for correct HTML structure.
+    ========================================================================== -->
+    <main>
 
-            <!-- Hero section with a background image and title -->
-            <section class="services-hero">
-                <div class="hero-content">
-                    <h1>Our Services</h1>
-                    <p>Professional photography for every occasion.</p>
-                </div>
-            </section>
+        <!-- Hero Section: A large visual banner to introduce the services page. -->
+        <section class="services-hero">
+            <div class="hero-content">
+                <h1>Our Services</h1>
+                <p>Professional photography for every occasion.</p>
+            </div>
+        </section>
 
-            <!-- Section for direct photography services -->
-            <section class="services-pricing">
-                <div class="pricing-grid">
+        <!-- Pricing Section: Displays the main photography services in a card-based grid layout. -->
+        <section class="services-pricing">
+            <div class="pricing-grid">
 
-                    <!-- Service Card 1: Private Events -->
-                    <div class="pricing-card">
-                        <img src="/media/images/services/private_events.jpg" alt="A lively private event captured"
-                            class="card-image">
-                        <h3>Private Events</h3>
-                        <p>From birthday parties to corporate gatherings, I capture the atmosphere and emotion of your
-                            special occasions.</p>
-                        <div class="price">£40 / hour</div>
-                        <a href="/contact.html" class="cta-button">Book an Event</a>
-                    </div>
-
-                    <!-- Service Card 2: Short-Term Contracts -->
-                    <div class="pricing-card">
-                        <img src="/media/images/services/short_term_contract.jpg" alt="Professional product photography"
-                            class="card-image">
-                        <h3>Short-Term Contracts</h3>
-                        <p>Ideal for projects like marketing campaigns, product launches, or updating your business
-                            portfolio with fresh imagery.</p>
-                        <div class="price">£25 / hour</div>
-                        <a href="/contact.html" class="cta-button">Start a Project</a>
-                    </div>
-
-                    <!-- Service Card 3: Long-Term Contracts -->
-                    <div class="pricing-card">
-                        <img src="/media/images/services/long_term_contract.jpg"
-                            alt="Ongoing content creation for a brand" class="card-image">
-                        <h3>Long-Term Contracts</h3>
-                        <p>For ongoing content needs, seasonal lookbooks, or regular social media imagery. Let's build a
-                            lasting partnership.</p>
-                        <div class="price">Negotiable</div>
-                        <a href="/contact.html" class="cta-button">Discuss a Partnership</a>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- Section for Fine Art Print Sales -->
-            <section class="art-prints-section">
-                <div class="art-prints-content">
-                    <h2>Fine Art for Your Space</h2>
-                    <p>Beyond events, I sell a curated selection of my favourite nature photographs as high-quality,
-                        framed
-                        prints. These are perfect for adding a touch of natural beauty to any home, office, or
-                        commercial
-                        space.</p>
-
-                    <!-- Sub-section for business partnerships -->
-                    <div class="partnership-info">
-                        <h3>A Partnership Opportunity for Local Businesses</h3>
-                        <p>I partner with local bars, cafes, and restaurants in Dundee to display and sell my work. You
-                            provide the wall space, and I provide the art. For every framed photograph sold at your
-                            venue,
-                            you receive a <strong>10% commission</strong>. It's a simple way to beautify your space and
-                            earn
-                            passive income.</p>
-                        <a href="/contact.html" class="cta-button-secondary">Become a Partner</a>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <img src="/media/images/logo.png" alt="Jo Smith Photography Logo" class="footer-logo">
-
-                <div class="footer-middle-row">
-                    <!-- Clock Container. The JavaScript will place the date and the digital clock here. -->
-                    <div class="datetime-container">
-                        <div id="date"></div>
-                        <div id="clock"> </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://instagram.com/josmithphotography123" target="_blank" aria-label="Instagram">
-                            <!-- Icono de Instagram SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                class="bi bi-instagram" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 8 0zm0 1.44c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.282.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.92c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.283-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.232s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.038 1.096-.047 3.232-.047z" />
-                                <path
-                                    d="M8 4.881a3.119 3.119 0 1 0 0 6.238 3.119 3.119 0 0 0 0-6.238zM8 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                                <circle cx="12.148" cy="3.852" r=".738" />
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com/josmithphoto" target="_blank" aria-label="X/Twitter">
-                            <!-- Icono de X (Twitter) SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                class="bi bi-twitter-x" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.602.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
-                            </svg>
-                        </a>
-                    </div>
+                <!-- Service Card 1: Private Events -->
+                <div class="pricing-card">
+                    <img src="/media/images/services/private_events.jpg"
+                        alt="A lively private event captured with professional photography." class="card-image">
+                    <h3>Private Events</h3>
+                    <p>From birthday parties to corporate gatherings, I capture the atmosphere and emotion of your
+                        special occasions.</p>
+                    <div class="price">£40 / hour</div>
+                    <a href="/pages/contact.html" class="cta-button">Book an Event</a>
                 </div>
 
+                <!-- Service Card 2: Short-Term Contracts -->
+                <div class="pricing-card">
+                    <img src="/media/images/services/short_term_contract.jpg"
+                        alt="A professional product photography setup for a marketing campaign." class="card-image">
+                    <h3>Short-Term Contracts</h3>
+                    <p>Ideal for projects like marketing campaigns, product launches, or updating your business
+                        portfolio with fresh imagery.</p>
+                    <div class="price">£25 / hour</div>
+                    <a href="/pages/contact.html" class="cta-button">Start a Project</a>
+                </div>
 
-                <div class="footer-info">
-                    <p>&copy; 2025 Jo Smith Photography</p>
-                    <p>987 Brook Street, Dundee, DD5 2EA</p>
+                <!-- Service Card 3: Long-Term Contracts -->
+                <div class="pricing-card">
+                    <img src="/media/images/services/long_term_contract.jpg"
+                        alt="A photographer creating ongoing visual content for a brand's social media."
+                        class="card-image">
+                    <h3>Long-Term Contracts</h3>
+                    <p>For ongoing content needs, seasonal lookbooks, or regular social media imagery. Let's build a
+                        lasting partnership.</p>
+                    <div class="price">Negotiable</div>
+                    <a href="/pages/contact.html" class="cta-button">Discuss a Partnership</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Art Prints Section: Details the sale of fine art prints and partnership opportunities. -->
+        <section class="art-prints-section">
+            <div class="art-prints-content">
+                <h2>Fine Art for Your Space</h2>
+                <p>Beyond events, I sell a curated selection of my favourite nature photographs as high-quality, framed
+                    prints. These are perfect for adding a touch of natural beauty to any home, office, or commercial
+                    space.</p>
+
+                <!-- A highlighted sub-section for the business partnership program. -->
+                <div class="partnership-info">
+                    <h3>A Partnership Opportunity for Local Businesses</h3>
+                    <p>I partner with local bars, cafes, and restaurants in Dundee to display and sell my work. You
+                        provide the wall space, and I provide the art. For every framed photograph sold at your venue,
+                        you receive a <strong>10% commission</strong>. It's a simple way to beautify your space and earn
+                        passive income.</p>
+                    <a href="/pages/contact.html" class="cta-button-secondary">Become a Partner</a>
                 </div>
             </div>
-        </footer>
+        </section>
 
-        <script src="../js/script.js"></script>
-    </body>
+    </main>
 
-</html>
+    <!-- ==========================================================================
+       SECTION: SITE FOOTER
+       This is the main footer, consistent across all pages.
+    ========================================================================== -->
+    <footer>
+        <div class="footer-content">
+            <img src="/media/images/logo.png" alt="Jo Smith Photography Logo" class="footer-logo">
+
+            <div class="footer-middle-row">
+                <!-- This container will be populated by JavaScript with the current date and time. -->
+                <div class="datetime-container">
+                    <div id="date"></div>
+                    <div id="clock"></div>
+                </div>
+
+                <!-- Social media links -->
+                <div class="social-links">
+                    <a href="https://instagram.com/josmithphotography123" target="_blank" aria-label="Instagram">
+                        <!-- SVG icon for Instagram -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 8 0zm0 1.44c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.282.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.92c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.283-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.232s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.038 1.096-.047 3.232-.047z" />
+                            <path
+                                d="M8 4.881a3.119 3.119 0 1 0 0 6.238 3.119 3.119 0 0 0 0-6.238zM8 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                            <circle cx="12.148" cy="3.852" r=".738" />
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/josmithphoto" target="_blank" aria-label="X/Twitter">
+                        <!-- SVG icon for X (Twitter) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-twitter-x" viewBox="0 0 16 16">
+                            <path
+                                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.602.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright and address information -->
+            <div class="footer-info">
+                <p>&copy; 2025 Jo Smith Photography</p>
+                <p>987 Brook Street, Dundee, DD5 2EA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       SECTION: JAVASCRIPT
+       Scripts are placed at the end of the body for faster page load times.
+    ========================================================================== -->
+    <script src="../js/script.js"></script>
 
 </body>
 

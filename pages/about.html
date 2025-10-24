@@ -1,7 +1,15 @@
+<!--
+  ================================================================================
+  FILE: about.html
+  DESCRIPTION: The "About Me" page for the Jo Smith Photography website.
+               Introduces the photographer, her journey, and her philosophy.
+  ================================================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Basic page setup and character encoding -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,39 +17,38 @@
     <!-- ============== ESSENTIAL SEO METADATA ============== -->
     <!-- ====================================================== -->
 
-    <!-- Page Title (VERY IMPORTANT) -->
-    <!-- Clearly states what the page is about, who you are, and your location. -->
+    <!-- Page Title: Appears in the browser tab and as the main headline in Google search results. -->
     <title>About Jo Smith | Dundee Photographer | Nature & Portrait Photography</title>
 
-    <!-- Page Description (VERY IMPORTANT) -->
-    <!-- An engaging summary for search engine results. -->
+    <!-- Page Description: An engaging summary for search engine results. -->
     <meta name="description"
         content="Learn more about Jo Smith, a passionate nature and portrait photographer based in Dundee, Scotland. Discover her journey, philosophy, and the story behind the lens.">
 
-    <!-- Author and Copyright -->
+    <!-- Author and Copyright information -->
     <meta name="author" content="Jo Smith">
     <meta name="copyright" content="Copyright 2025 Jo Smith Photography. All Rights Reserved.">
 
-    <!-- Canonical URL (IMPORTANT) -->
-    <!-- The official URL for this specific page. -->
-    <!-- Replace "https://www.josmithphoto.com" with your actual domain. -->
+    <!-- Canonical URL: The official URL for this specific page, preventing duplicate content issues. -->
     <link rel="canonical" href="https://josmithphotographer.netlify.app//pages/about.html">
 
-    <!-- Favicon -->
+    <!-- Favicon: The small icon that appears in the browser tab. -->
     <link rel="icon" href="/media/images/favicon.png" type="image/png">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/about.css">
+    <!-- ====================================================== -->
+    <!-- =================== STYLESHEETS ==================== -->
+    <!-- ====================================================== -->
+
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Site-wide global styles -->
+    <link rel="stylesheet" href="/css/about.css"> <!-- Styles specific to this page -->
 
     <!-- ====================================================== -->
     <!-- ========= SOCIAL MEDIA METADATA (OPEN GRAPH) ========= -->
     <!-- ====================================================== -->
-    <!-- This controls how the page looks when shared on Facebook, WhatsApp, etc. -->
+    <!-- This controls how the page looks when shared on platforms like Facebook, WhatsApp, etc. -->
 
     <meta property="og:title" content="About Jo Smith | Dundee Photographer">
     <meta property="og:description" content="Discover the story and passion behind Dundee-based photographer Jo Smith.">
-    <!-- Use your portrait for a personal touch. Must be a full, absolute URL. -->
+    <!-- Uses the portrait image for a personal touch in social shares. -->
     <meta property="og:image"
         content="https://josmithphotographer.netlify.app//media/images/about/jo-smith-portrait.jpg">
     <meta property="og:url" content="https://josmithphotographer.netlify.app//pages/about.html">
@@ -59,26 +66,35 @@
         content="Discover the story and passion behind Dundee-based photographer Jo Smith.">
     <meta name="twitter:image"
         content="https://josmithphotographer.netlify.app//media/images/about/jo-smith-portrait.jpg">
-    <!-- If you have a Twitter handle, add it here. -->
     <!-- <meta name="twitter:creator" content="@josmithphoto"> -->
 
 </head>
 
 <body>
+
+    <!-- ==========================================================================
+       SECTION: SITE HEADER
+       This is the main header, consistent across all pages.
+    ========================================================================== -->
     <header>
+        <!-- Logo linking back to the homepage -->
         <a href="/index.html" class="logo-link">
             <img class="logo" src="/media/images/logo.png" alt="Jo Smith - Photography">
         </a>
 
+        <!-- Mobile menu toggle button (hamburger icon) -->
         <button class="open-menu" id="open">
             <img class="icon-open-menu" src="/media/images/menu_obt.png" alt="Open Menu Icon">
         </button>
 
+        <!-- Navigation container. Functions as an off-canvas menu on mobile. -->
         <nav class="nav" id="nav">
+            <!-- Button to close the mobile navigation menu -->
             <button class="close-menu" id="close">
                 <img class="icon-close-menu" src="/media/images/x-circle-fill.svg" alt="Close Menu Icon">
             </button>
 
+            <!-- Main navigation links for the site. The 'active' class highlights the current page. -->
             <ul class="nav-list">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/pages/about.html" class="active">About</a></li>
@@ -89,76 +105,73 @@
         </nav>
     </header>
 
+    <!-- ==========================================================================
+       SECTION: MAIN CONTENT
+       This contains the unique content for the About page.
+    ========================================================================== -->
     <main>
-        <!-- Hero Section for About Page -->
+
+        <!-- Hero Section: The large introductory banner at the top of the page. -->
         <section class="about-hero-section">
             <div class="about-hero-content">
-                <h1 class="about-hero-title">
-                    Meet Jo Smith
-                </h1>
-                <p class="about-hero-subtitle">
-                    Capturing the Essence of Nature & Life Through the Lens
-                </p>
+                <h1 class="about-hero-title">Meet Jo Smith</h1>
+                <p class="about-hero-subtitle">Capturing the Essence of Nature & Life Through the Lens</p>
             </div>
-            <!-- ESTE DIV FALTABA Y ES CRUCIAL PARA EL EFECTO DE IMAGEN DE FONDO -->
+            <!-- Developer Note: This empty div is crucial for applying the gradient overlay via CSS, enhancing text readability. -->
             <div class="about-hero-image-overlay"></div>
         </section>
 
-        <!-- Introduction Section -->
+        <!-- Introduction Section: Presents the photographer's story alongside a portrait. -->
         <section class="about-intro-section">
-            <!-- CORREGIDO: de 'abput-intro-content' a 'about-intro-content' -->
+            <!-- Developer Note: Class name was corrected from 'abput-intro-content' for consistency. -->
             <div class="about-intro-content">
                 <div class="about-intro-text">
                     <h2> My Journey Into Photography </h2>
                     <p>
                         Born and raised amidst the stunning landscapes of Dundee, Scotland, my passion for photography
-                        blossomed from
-                        an early age. I've always found solace and inspiration in the natural world around me, from the
-                        serene lochs to the dramatic
-                        coastlines. This deep connection to nature has shaped my artistic vision, leading me to
-                        specialise in capturing its raw beauty and
-                        intricate details.
+                        blossomed from an early age. I've always found solace and inspiration in the natural world
+                        around me, from the
+                        serene lochs to the dramatic coastlines. This deep connection to nature has shaped my artistic
+                        vision, leading me to
+                        specialise in capturing its raw beauty and intricate details.
                     </p>
-                    <p>My academic journey took me through university right here in Dundee, where I honed my technical
+                    <p>
+                        My academic journey took me through university right here in Dundee, where I honed my technical
                         skills
                         and developed a unique photographic style. While nature photography remains my true calling, my
                         diverse
                         experiences have allowed me to excel in various genres, from intimate portraits to vibrant event
-                        coverage,
-                        always with a commitment to professionalism and artistic integrity.
+                        coverage, always with a commitment to professionalism and artistic integrity.
                     </p>
                 </div>
-
-                <!-- CORREGIDO: de 'about-intro-home' a 'about-intro-image' -->
-                <!-- CORREGIDO: ruta de imagen de 'jo-smith.jpg' a 'jo-smith-portrait.jpg' -->
+                <!-- The photographer's portrait image. -->
                 <div class="about-intro-image">
-                    <img src="/media/images/about/jo-smith-portrait.jpg" alt="Portrait of Jo Smith">
+                    <img src="/media/images/about/jo-smith-portrait.jpg"
+                        alt="A professional portrait of Jo Smith, the photographer.">
                 </div>
             </div>
         </section>
 
-        <!-- Philosophy/Approach Section -->
+        <!-- Philosophy Section: Outlines the photographer's core values and approach. -->
         <section class="about-philosophy-section">
             <div class="about-philosophy-content">
-                <h2>
-                    My Photographic Philosophy
-                </h2>
-                <!-- CORREGIDO: de 'philosopy-grid' a 'philosophy-grid' -->
+                <h2>My Photographic Philosophy</h2>
+                <!-- A three-column grid to display the different aspects of the philosophy. -->
+                <!-- Developer Note: Class name was corrected from 'philosopy-grid' for consistency. -->
                 <div class="philosophy-grid">
                     <div class="philosophy-item">
                         <h3><span class="icon">🌿</span> Nature's Narrative</h3>
                         <p>I believe every landscape, every creature, and every moment in nature tells a story.
                             My goal is to capture these narratives with authenticity, revealing the often-unseen beauty
-                            and
-                            delicate balance of our environment. Through my lens, I strive to evoke emotion and inspire
-                            a deeper
-                            appreciation for the world around us.</p>
+                            and delicate balance of our environment. Through my lens, I strive to evoke emotion and
+                            inspire
+                            a deeper appreciation for the world around us.</p>
                     </div>
                     <div class="philosophy-item">
                         <h3><span class="icon">✨</span> Professional Excellence</h3>
                         <p>Beyond nature, I bring the same meticulous attention to detail and creative flair to all my
-                            assignments.
-                            Whether it's a corporate event, a family portrait, or an architectural study, I am dedicated
+                            assignments. Whether it's a corporate event, a family portrait, or an architectural study, I
+                            am dedicated
                             to delivering stunning, high-quality images that exceed client expectations and truly
                             reflect their vision.</p>
                     </div>
@@ -172,7 +185,7 @@
             </div>
         </section>
 
-        <!-- Call to Action Section (similar to home, but tailored) -->
+        <!-- Call to Action (CTA) Section: Encourages users to visit the gallery or contact pages. -->
         <section class="home-cta-section about-cta-section">
             <div class="cta-content-wrapper">
                 <div class="cta-item">
@@ -190,31 +203,36 @@
         </section>
     </main>
 
+    <!-- ==========================================================================
+       SECTION: SITE FOOTER
+       This is the main footer, consistent across all pages.
+    ========================================================================== -->
     <footer>
         <div class="footer-content">
             <img src="/media/images/logo.png" alt="Jo Smith Photography Logo" class="footer-logo">
 
             <div class="footer-middle-row">
-                <!-- Clock Container. The JavaScript will place the date and the digital clock here. -->
+                <!-- This container will be populated by JavaScript with the current date and time. -->
                 <div class="datetime-container">
                     <div id="date"></div>
-                    <div id="clock"> </div>
+                    <div id="clock"></div>
                 </div>
 
+                <!-- Social media links -->
                 <div class="social-links">
                     <a href="https://instagram.com/josmithphotography123" target="_blank" aria-label="Instagram">
-                        <!-- Icono de Instagram SVG -->
+                        <!-- SVG icon for Instagram -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-instagram" viewBox="0 0 16 16">
                             <path
-                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 8 0zm0 1.44c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.282.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.92c-.28.28-.546.453-.92.598-.11.282-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.283-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.232s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.038 1.096-.047 3.232-.047z" />
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 8 0zm0 1.44c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.282.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.92c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.283-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.232s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.038 1.096-.047 3.232-.047z" />
                             <path
                                 d="M8 4.881a3.119 3.119 0 1 0 0 6.238 3.119 3.119 0 0 0 0-6.238zM8 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                             <circle cx="12.148" cy="3.852" r=".738" />
                         </svg>
                     </a>
                     <a href="https://twitter.com/josmithphoto" target="_blank" aria-label="X/Twitter">
-                        <!-- Icono de X (Twitter) SVG -->
+                        <!-- SVG icon for X (Twitter) -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-twitter-x" viewBox="0 0 16 16">
                             <path
@@ -224,13 +242,18 @@
                 </div>
             </div>
 
-
+            <!-- Copyright and address information -->
             <div class="footer-info">
                 <p>&copy; 2025 Jo Smith Photography</p>
                 <p>987 Brook Street, Dundee, DD5 2EA</p>
             </div>
         </div>
     </footer>
+
+    <!-- ==========================================================================
+       SECTION: JAVASCRIPT
+       Scripts are placed at the end of the body for faster page load times.
+    ========================================================================== -->
     <script src="../js/script.js"></script>
 </body>
 

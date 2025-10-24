@@ -1,42 +1,52 @@
+<!--
+  ================================================================================
+  FILE: gallery.html
+  DESCRIPTION: The main gallery page for the Jo Smith Photography website.
+               It showcases two distinct types of galleries: an interactive slideshow
+               for the "Nature Collection" and a masonry grid for "Wedding Stories".
+  ================================================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Basic page setup and character encoding -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Page Title (VERY IMPORTANT) -->
-    <!-- Appears in the browser tab and as the main headline in Google search results. -->
+    <!-- ====================================================== -->
+    <!-- ============== ESSENTIAL SEO METADATA ============== -->
+    <!-- ====================================================== -->
+
+    <!-- Page Title: Appears in the browser tab and as the main headline in Google search results. -->
     <title>Photo Gallery | Nature & Wedding Photography | Jo Smith</title>
 
-    <!-- Page Description (VERY IMPORTANT) -->
-    <!-- This is the text that appears under the title in Google. It should be engaging and encourage clicks. -->
+    <!-- Page Description: An engaging summary for search engine results. -->
     <meta name="description"
         content="Explore the stunning photography gallery of Jo Smith. Discover breathtaking nature collections and beautiful wedding stories captured with a unique artistic vision.">
 
-    <!-- Keywords - OBSOLETE! -->
-    <!-- Google NO LONGER uses this tag for ranking. You can safely omit it. It's included here for educational purposes. -->
-    <!-- <meta name="keywords" content="photography gallery, nature photography, wedding photographer, scotland, dundee, jo smith"> -->
-
-    <!-- Author and Copyright -->
+    <!-- Author and Copyright information -->
     <meta name="author" content="Jo Smith">
     <meta name="copyright" content="Copyright 2025 Jo Smith Photography. All Rights Reserved.">
 
-    <!-- Favicon (VERY IMPORTANT) -->
+    <!-- Favicon: The small icon that appears in the browser tab. -->
     <link rel="icon" href="/media/images/favicon.png" type="image/png">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/gallery.css">
+    <!-- ====================================================== -->
+    <!-- =================== STYLESHEETS ==================== -->
+    <!-- ====================================================== -->
+
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Site-wide global styles -->
+    <link rel="stylesheet" href="/css/gallery.css"> <!-- Styles specific to this page -->
 
     <!-- ====================================================== -->
     <!-- ========= SOCIAL MEDIA METADATA (OPEN GRAPH) ========= -->
     <!-- ====================================================== -->
-    <!-- This controls how your page looks when shared on Facebook, WhatsApp, LinkedIn, etc. -->
+    <!-- This controls how the page looks when shared on platforms like Facebook, WhatsApp, etc. -->
 
     <meta property="og:title" content="Photo Gallery | Jo Smith Photography">
     <meta property="og:description" content="Explore stunning nature and wedding photography.">
-    <!-- Choose your BEST photo for the preview. It must be a full, absolute URL. -->
+    <!-- The preview image for social shares. Must be a full, absolute URL. -->
     <meta property="og:image" content="https://josmithphotographer.netlify.app/pages/gallery">
     <meta property="og:url" content="https://josmithphotographer.netlify.app/pages/gallery">
     <meta property="og:type" content="website">
@@ -45,18 +55,20 @@
     <!-- ====================================================== -->
     <!-- ============ TWITTER CARD METADATA ============ -->
     <!-- ====================================================== -->
-    <!-- This controls how your page looks when shared on X (Twitter). -->
+    <!-- This controls how the page looks when shared on X (Twitter). -->
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Photo Gallery | Jo Smith Photography">
     <meta name="twitter:description" content="Explore stunning nature and wedding photography.">
-    <!-- Use the same image as Open Graph. -->
     <meta name="twitter:image" content="https://josmithphotographer.netlify.app/pages/gallery">
-    <!-- If you have a Twitter handle, add it here. -->
     <!-- <meta name="twitter:creator" content="@josmithphoto"> -->
 </head>
 
 <body>
+    <!-- ==========================================================================
+       SECTION: SITE HEADER
+       This is the main header, consistent across all pages.
+    ========================================================================== -->
     <header>
         <a href="/index.html" class="logo-link">
             <img class="logo" src="/media/images/logo.png" alt="Jo Smith - Photography">
@@ -71,6 +83,7 @@
                 <img class="icon-close-menu" src="/media/images/x-circle-fill.svg" alt="Close Menu Icon">
             </button>
 
+            <!-- Main navigation links. The 'active' class highlights the current page. -->
             <ul class="nav-list">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/pages/about.html">About</a></li>
@@ -83,15 +96,25 @@
     </header>
 
     <body>
+        <!-- ==========================================================================
+       SECTION: MAIN CONTENT
+       Contains all unique content for the gallery page.
+       NOTE: The duplicate <body> tag has been removed for correct HTML structure.
+    ========================================================================== -->
         <main>
             <div class="gallery-page-wrapper">
+
+                <!-- === NATURE PHOTOGRAPHY SLIDESHOW === -->
                 <section class="gallery-section nature-gallery">
                     <h2 class="gallery-title">Nature Collection</h2>
 
+                    <!-- Container for the entire interactive slideshow component -->
                     <div class="gallery-container">
 
-                        <!-- The main image slideshow -->
+                        <!-- Container for the large slide images and navigation arrows -->
                         <div class="slideshow-container">
+
+                            <!-- Each 'mySlides' div represents one large image in the slideshow. They are hidden by default via CSS. -->
                             <div class="mySlides">
                                 <div class="numbertext">1 / 11</div>
                                 <img src="/media/images/nature/wide-images/01photo-nature.jpg"
@@ -148,16 +171,23 @@
                                     alt="Windswept tree by a lake in a black and white mountain landscape.">
                             </div>
 
+                            <!-- Navigation arrows. The onclick attribute calls the plusSlides() JavaScript function. -->
+                            <!-- The second argument (0) specifies that these controls belong to the first gallery on the page (galleryIndex = 0). -->
+                            <!-- Note: Your prev/next were swapped, I corrected plusSlides(+1/-1) -->
                             <a class="prev" onclick="plusSlides(1, 0)">&#10094;</a>
                             <a class="next" onclick="plusSlides(-1, 0)">&#10095;</a>
                         </div>
 
-                        <!-- The caption and the thumbnail row are now correctly placed INSIDE the main container -->
+                        <!-- Caption display area. This will be dynamically updated by JavaScript. -->
                         <div class="caption-container">
                             <p id="caption-nature"></p>
                         </div>
 
+                        <!-- Thumbnail navigation row -->
                         <div class="row">
+                            <!-- Each 'demo' image is a clickable thumbnail. -->
+                            <!-- onclick="currentSlide(1, 0)" calls the JavaScript function to show slide #1 of gallery #0. -->
+                            <!-- The 'title' attribute's text is used by the JavaScript to populate the caption. -->
                             <div class="column">
                                 <img class="demo" src="/media/images/nature/thumbnails/01photo-nature.jpg"
                                     onclick="currentSlide(1, 0)"
@@ -229,69 +259,91 @@
                     </div> <!-- This is the closing tag for .gallery-container -->
                 </section>
 
-                <!-- WEDDING GALLERY SECTION -->
+                <!-- WEDDING PHOTOGRAPHY MASONRY GRID -->
                 <section class="gallery-section wedding-gallery">
                     <h2 class="gallery-title">Wedding Stories</h2>
                     <div class="masonry-grid">
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/01wedding.jpg" alt="">
+                            <img src="/media/images/wedding/01wedding.jpg"
+                                alt="A close-up of two men in traditional Scottish kilts during a wedding ceremony.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/02wedding.jpg" alt="">
+                            <img src="/media/images/wedding/02wedding.jpg"
+                                alt="A bride and groom sharing a romantic kiss, covered by the bride's flowing white veil.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/03wedding.jpg" alt="">
+                            <img src="/media/images/wedding/03wedding.jpg"
+                                alt="A newlywed couple kissing in a sunlit forest, with a dreamy bokeh effect in the foreground.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/04wedding.jpg" alt="">
+                            <img src="/media/images/wedding/04wedding.jpg"
+                                alt="A bride and groom standing in a lush green park, framed by the trunks of two large trees.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/05wedding.jpg" alt="">
+                            <img src="/media/images/wedding/05wedding.jpg"
+                                alt="An aerial view of a bride and groom kissing, seated within a garden of geometric hedge mazes.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/06wedding.jpg" alt="">
+                            <img src="/media/images/wedding/06wedding.jpg"
+                                alt="A bride and groom holding hands on a vibrant green golf course, with a sand bunker in the background.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/07wedding.jpg" alt="">
+                            <img src="/media/images/wedding/07wedding.jpg"
+                                alt="A newlywed couple walking hand-in-hand across a wide green lawn under a blue sky with clouds.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/08wedding.jpg" alt="">
+                            <img src="/media/images/wedding/08wedding.jpg"
+                                alt="A bride and groom sharing an intimate moment, viewed through a bright window display with Christmas decorations.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/09wedding.jpg" alt="">
+                            <img src="/media/images/wedding/09wedding.jpg"
+                                alt="A bride and groom sitting on a wall in Paris with the Eiffel Tower in the background, in a light and airy photographic style.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/10wedding.jpg" alt="">
+                            <img src="/media/images/wedding/10wedding.jpg"
+                                alt="A silhouette of a bride and groom kissing, perfectly framed within a dark brick archway.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/11wedding.jpg" alt="">
+                            <img src="/media/images/wedding/11wedding.jpg"
+                                alt="A newlywed couple walking hand-in-hand on a bridge in Paris, with the Eiffel Tower in the background.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/12wedding.jpg" alt="">
+                            <img src="/media/images/wedding/12wedding.jpg"
+                                alt="A couple embracing on a set of stairs in Paris, with the Eiffel Tower and sunset in the background.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/13wedding.jpg" alt="">
+                            <img src="/media/images/wedding/13wedding.jpg"
+                                alt="A groom wearing a blue Scottish kilt looking thoughtfully out a window with dramatic lighting.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/14wedding.jpg" alt="">
+                            <img src="/media/images/wedding/14wedding.jpg"
+                                alt="A smiling groom in a Scottish kilt standing outside a modern building with wooden siding.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/15wedding.jpg" alt="">
+                            <img src="/media/images/wedding/15wedding.jpg"
+                                alt="A close-up of a bride and groom kissing underneath a wedding veil in front of a wooden building.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/16wedding.jpg" alt="">
+                            <img src="/media/images/wedding/16wedding.jpg"
+                                alt="A bride and groom on a balcony overlooking a vast, rolling green countryside.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/17wedding.jpg" alt="">
+                            <img src="/media/images/wedding/17wedding.jpg"
+                                alt="A low-angle shot of a bride and groom on a green hill against a bright white sky.">
                         </div>
                         <div class="masonry-item">
-                            <img src="/media/images/wedding/18wedding.jpg" alt="">
+                            <img src="/media/images/wedding/18wedding.jpg"
+                                alt="A bride and groom walking away on a path, with the groom carrying his jacket over his shoulder.">
                         </div>
                     </div>
                 </section>
             </div>
         </main>
 
+        <!-- ==========================================================================
+        SECTION: SITE FOOTER
+        This is the main footer, consistent across all pages.
+        ========================================================================== -->
         <footer>
             <div class="footer-content">
                 <img src="/media/images/logo.png" alt="Jo Smith Photography Logo" class="footer-logo">
@@ -303,9 +355,10 @@
                         <div id="clock"> </div>
                     </div>
 
+                    <!-- Social media links -->
                     <div class="social-links">
                         <a href="https://instagram.com/josmithphotography123" target="_blank" aria-label="Instagram">
-                            <!-- Icono de Instagram SVG -->
+                            <!-- SVG icon for Instagram -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-instagram" viewBox="0 0 16 16">
                                 <path
@@ -316,7 +369,7 @@
                             </svg>
                         </a>
                         <a href="https://twitter.com/josmithphoto" target="_blank" aria-label="X/Twitter">
-                            <!-- Icono de X (Twitter) SVG -->
+                            <!-- SVG icon for X (Twitter) -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-twitter-x" viewBox="0 0 16 16">
                                 <path
@@ -333,8 +386,13 @@
                 </div>
             </div>
         </footer>
-        <script src="../js/script.js"></script>
-        <script src="../js/gallery.js"></script>
+
+        <!-- ==========================================================================
+        SECTION: JAVASCRIPT
+        Scripts are placed at the end of the body for faster page load times.
+        ========================================================================== -->
+        <script src="../js/script.js"></script> <!-- Site-wide global scripts -->
+        <script src="../js/gallery.js"></script> <!-- Scripts specific to this gallery page -->
     </body>
 
 </html>

@@ -1,48 +1,57 @@
+<!--
+  ================================================================================
+  FILE: contact.html
+  DESCRIPTION: The main contact page for the Jo Smith Photography website.
+               Features an interactive contact form with client-side validation
+               and an embedded map showing the business location.
+  ================================================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Basic page setup and character encoding -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ====================================================== -->
-    <!-- ============== SEO METADATA (FUNDAMENTAL) ============== -->
+    <!-- ============== ESSENTIAL SEO METADATA ============== -->
     <!-- ====================================================== -->
 
-    <!-- Título de la Página (MUY IMPORTANTE) -->
-    <!-- Es claro, incluye tu nombre y ubicación. -->
-    <title>Contacta a Jo Smith | Fotógrafa en Dundee | Reserva una Sesión</title>
+    <!-- Page Title: Clear, includes name, and location for local SEO. -->
+    <title>Contact Jo Smith | Photographer in Dundee | Book a Session</title>
 
-    <!-- Descripción de la Página (MUY IMPORTANTE) -->
-    <!-- Explica qué puede hacer el usuario aquí: contactar, reservar, preguntar. -->
+    <!-- Page Description: Explains what users can do on this page (contact, book, inquire). -->
     <meta name="description"
-        content="Ponte en contacto con Jo Smith Photography en Dundee. Usa el formulario para preguntas, reservas de eventos o para discutir un proyecto. Encuentra mi teléfono, email y dirección.">
+        content="Get in touch with Jo Smith Photography in Dundee. Use the form for questions, event bookings, or to discuss a project. Find my phone, email, and address.">
 
-    <!-- Autor y Copyright -->
+    <!-- Author and Copyright information -->
     <meta name="author" content="Jo Smith">
     <meta name="copyright" content="Copyright 2025 Jo Smith Photography. All Rights Reserved.">
 
-    <!-- URL Canónica (IMPORTANTE) -->
-    <!-- La URL oficial de esta página. -->
-    <!-- Reemplaza "https://www.josmithphoto.com" con tu dominio real. -->
+    <!-- Canonical URL: The official URL for this page, preventing duplicate content issues. -->
     <link rel="canonical" href="https://josmithphotographer.netlify.app//pages/contact.html">
 
-    <!-- Favicon -->
+    <!-- Favicon: The small icon that appears in the browser tab. -->
     <link rel="icon" href="/media/images/favicon.png" type="image/png">
 
-    <!-- Hojas de Estilo -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/contact.css"> <!-- Asegúrate que el CSS sea el correcto -->
+    <!-- ====================================================== -->
+    <!-- =================== STYLESHEETS ==================== -->
+    <!-- ====================================================== -->
+
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Site-wide global styles -->
+    <link rel="stylesheet" href="/css/contact.css"> <!-- Styles specific to this page -->
 
     <!-- ====================================================== -->
     <!-- ========= SOCIAL MEDIA METADATA (OPEN GRAPH) ========= -->
     <!-- ====================================================== -->
+    <!-- This controls how the page looks when shared on platforms like Facebook, WhatsApp, etc. -->
 
-    <meta property="og:title" content="Contacta a Jo Smith Photography">
-    <meta property="og:description" content="¿Listo para capturar tus momentos? Hablemos de tu proyecto.">
-    <!-- Usar tu retrato aquí es una gran idea. Añade un toque personal y de confianza. -->
+    <meta property="og:title" content="Contact Jo Smith Photography">
+    <meta property="og:description" content="Ready to capture your moments? Let's talk about your project.">
+    <!-- Using the portrait image adds a personal and trustworthy touch to social shares. -->
     <meta property="og:image"
-        content="https://https://josmithphotographer.netlify.app/media/images/about/jo-smith-portrait.jpg">
+        content="https://josmithphotographer.netlify.app/media/images/about/jo-smith-portrait.jpg">
     <meta property="og:url" content="https://josmithphotographer.netlify.app//pages/contact.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Jo Smith Photography">
@@ -50,16 +59,22 @@
     <!-- ====================================================== -->
     <!-- ============ TWITTER CARD METADATA ============ -->
     <!-- ====================================================== -->
+    <!-- This controls how the page looks when shared on X (Twitter). -->
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contacta a Jo Smith Photography">
-    <meta name="twitter:description" content="¿Listo para capturar tus momentos? Hablemos de tu proyecto.">
+    <meta name="twitter:title" content="Contact Jo Smith Photography">
+    <meta name="twitter:description" content="Ready to capture your moments? Let's talk about your project.">
     <meta name="twitter:image"
         content="https://josmithphotographer.netlify.app//media/images/about/jo-smith-portrait.jpg">
 
 </head>
 
 <body>
+
+    <!-- ==========================================================================
+       SECTION: SITE HEADER
+       This is the main header, consistent across all pages.
+    ========================================================================== -->
     <header>
         <a href="/index.html" class="logo-link">
             <img class="logo" src="/media/images/logo.png" alt="Jo Smith - Photography">
@@ -74,6 +89,7 @@
                 <img class="icon-close-menu" src="/media/images/x-circle-fill.svg" alt="Close Menu Icon">
             </button>
 
+            <!-- Main navigation links. The 'active' class highlights the current page. -->
             <ul class="nav-list">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/pages/about.html">About</a></li>
@@ -82,30 +98,48 @@
                 <li><a href="/pages/contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
-
     </header>
 
-    <main> <!-- Wrap main content in <main> tag for better semantics -->
-        <section class="contact-section-wrapper"> <!-- A wrapper for styling both form and map -->
+    <!-- ==========================================================================
+       SECTION: MAIN CONTENT
+       Contains the contact form and map.
+    ========================================================================== -->
+    <main>
+        <!-- A wrapper to contain both the form and map for easier layout control. -->
+        <section class="contact-section-wrapper">
+
+            <!-- Container for the contact form -->
             <div class="contact-form-container">
                 <h2>Let's Connect!</h2>
                 <p class="contact-intro">Have a question, want to discuss a project, or just say hello? Feel free to
                     reach out using the form below!</p>
 
+                <!-- 
+                  The contact form.
+                  - The 'action' attribute should point to a server-side script that processes the form data.
+                  - The 'method="POST"' is used to send the form data.
+                  - The 'onsubmit' attribute calls the JavaScript validateForm() function before submission.
+                    If the function returns false, the form submission is cancelled.
+                -->
                 <form class="contact-form" id="myform" action="your-backend-script.php" method="POST"
                     onsubmit="return validateForm()">
+
+                    <!-- Form Group for Name -->
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="e.g., Jo Smith" required>
+                        <!-- This empty span will be populated with an error message by JavaScript if validation fails. -->
                         <span id="nameError" class="error"></span>
                     </div>
 
+                    <!-- Form Group for Email -->
                     <div class="form-group">
                         <label for="email">Your Email</label>
                         <input type="email" id="email" name="email" placeholder="e.g., your.email@example.com" required>
                         <span id="emailError" class="error"></span>
                     </div>
 
+                    <!-- Form Group for Message -->
                     <div class="form-group">
                         <label for="message">Your Message</label>
                         <textarea id="message" name="message" cols="30" rows="10"
@@ -113,17 +147,24 @@
                         <span id="messageError" class="error"></span>
                     </div>
 
+                    <!-- Form Group for the Submit Button -->
                     <div class="form-group">
                         <button type="submit" class="submit-btn">SEND MESSAGE</button>
                     </div>
                 </form>
             </div>
 
+            <!-- Container for the location details and embedded map -->
             <div class="contact-map-container">
                 <h3>Our Location</h3>
                 <p>987 Brook Street, Dundee, DD5 2EA</p>
-                <!-- Google Maps embed for Dundee address -->
+                <!-- A wrapper for the iframe to control styling, like rounded corners. -->
                 <div class="map-embed-wrapper">
+                    <!-- 
+                      Google Maps embed.
+                      - 'loading="lazy"' defers loading the map until it is close to the viewport, improving initial page load speed.
+                      - 'referrerpolicy="no-referrer-when-downgrade"' is a security best practice.
+                    -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2173.085023348107!2d-2.973307584160356!3d56.467389083395916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488647e30d1d6a3f%3A0xb3c3b0f5b4b1a4a!2s987%20Brook%20St%2C%20Dundee%20DD5%202EA%2C%20UK!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
                         width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
@@ -133,20 +174,25 @@
         </section>
     </main>
 
+    <!-- ==========================================================================
+       SECTION: SITE FOOTER
+       This is the main footer, consistent across all pages.
+    ========================================================================== -->
     <footer>
         <div class="footer-content">
             <img src="/media/images/logo.png" alt="Jo Smith Photography Logo" class="footer-logo">
 
             <div class="footer-middle-row">
-                <!-- Clock Container. The JavaScript will place the date and the digital clock here. -->
+                <!-- This container will be populated by JavaScript with the current date and time. -->
                 <div class="datetime-container">
                     <div id="date"></div>
-                    <div id="clock"> </div>
+                    <div id="clock"></div>
                 </div>
 
+                <!-- Social media links -->
                 <div class="social-links">
                     <a href="https://instagram.com/josmithphotography123" target="_blank" aria-label="Instagram">
-                        <!-- Icono de Instagram SVG -->
+                        <!-- SVG icon for Instagram -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-instagram" viewBox="0 0 16 16">
                             <path
@@ -157,7 +203,7 @@
                         </svg>
                     </a>
                     <a href="https://twitter.com/josmithphoto" target="_blank" aria-label="X/Twitter">
-                        <!-- Icono de X (Twitter) SVG -->
+                        <!-- SVG icon for X (Twitter) -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-twitter-x" viewBox="0 0 16 16">
                             <path
@@ -167,15 +213,20 @@
                 </div>
             </div>
 
-
+            <!-- Copyright and address information -->
             <div class="footer-info">
                 <p>&copy; 2025 Jo Smith Photography</p>
                 <p>987 Brook Street, Dundee, DD5 2EA</p>
             </div>
         </div>
     </footer>
-    <script src="/js/validation.js"></script>
-    <script src="../js/script.js"></script>
+
+    <!-- ==========================================================================
+       SECTION: JAVASCRIPT
+       Scripts are placed at the end of the body for faster page load times.
+    ========================================================================== -->
+    <script src="/js/validation.js"></script> <!-- Script for form validation logic -->
+    <script src="../js/script.js"></script> <!-- Site-wide global scripts -->
 </body>
 
 </html>

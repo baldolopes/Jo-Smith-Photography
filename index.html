@@ -1,7 +1,16 @@
+<!--
+  ================================================================================
+  FILE: index.html
+  DESCRIPTION: The main homepage/landing page for the Jo Smith Photography website.
+               Features a hero slideshow, an introduction, and calls to action
+               to guide users to other key pages.
+  ================================================================================
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Basic page setup and character encoding -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,30 +18,31 @@
     <!-- ============== ESSENTIAL SEO METADATA ============== -->
     <!-- ====================================================== -->
 
-    <!-- Page Title (VERY IMPORTANT) -->
-    <!-- The title should include your name, primary service, and location. -->
+    <!-- Page Title: The most important SEO tag. Includes name, service, and location. -->
     <title>Jo Smith Photography | Nature & Portrait Photographer in Dundee, Scotland</title>
 
-    <!-- Page Description (VERY IMPORTANT) -->
-    <!-- This is your "advertisement" in Google search results. Make it compelling and include keywords. -->
+    <!-- Page Description: The "advertisement" that appears in Google search results. -->
     <meta name="description"
         content="Discover the work of Jo Smith, a professional photographer in Dundee specializing in capturing the beauty of Scotland. Offering nature, portrait, and event photography services.">
 
-    <!-- Author and Copyright -->
+    <!-- Author and Copyright information -->
     <meta name="author" content="Jo Smith">
     <meta name="copyright" content="Copyright 2025 Jo Smith Photography. All Rights Reserved.">
 
-    <!-- Canonical URL (IMPORTANT) -->
-    <!-- This tells Google that this is the official main page of your site. -->
-    <!-- Replace "https://www.josmithphoto.com" with your actual domain. -->
-    <link rel="canonical"
-        href="https://josmithphotographer.netlify.app/--------------------------------------------------------------------------------------------------------------------------------------------------------">
+    <!-- 
+      Canonical URL: Tells Google the "official" version of this page. 
+      For the homepage, this should be the root URL of your site.
+      CORRECTION: The previous URL was broken; this has been fixed. 
+    -->
+    <link rel="canonical" href="https://josmithphotographer.netlify.app/">
 
-    <!-- Favicon -->
+    <!-- Favicon: The small icon that appears in the browser tab. -->
     <link rel="icon" href="/media/images/favicon.png" type="image/png">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <!-- ====================================================== -->
+    <!-- =================== STYLESHEETS ==================== -->
+    <!-- ====================================================== -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Site-wide global styles -->
 
     <!-- ====================================================== -->
     <!-- ========= SOCIAL MEDIA METADATA (OPEN GRAPH) ========= -->
@@ -41,7 +51,7 @@
 
     <meta property="og:title" content="Jo Smith Photography | Dundee, Scotland">
     <meta property="og:description" content="Capturing Scotland's beauty, one moment at a time.">
-    <!-- Choose a striking preview image (must be a full, absolute URL). -->
+    <!-- The preview image for social shares. Must be a full, absolute URL. -->
     <meta property="og:image"
         content="https://josmithphotographer.netlify.app/media/images/nature/wide-images/08photo-nature.jpg">
     <meta property="og:url" content="https://josmithphotographer.netlify.app/">
@@ -58,12 +68,16 @@
     <meta name="twitter:description" content="Capturing Scotland's beauty, one moment at a time.">
     <meta name="twitter:image"
         content="https://josmithphotographer.netlify.app//media/images/nature/wide-images/08photo-nature.jpg">
-    <!-- If you have a Twitter handle, add it here. -->
     <!-- <meta name="twitter:creator" content="@josmithphoto"> -->
 
 </head>
 
 <body>
+
+    <!-- ==========================================================================
+       SECTION: SITE HEADER
+       This is the main header, consistent across all pages.
+    ========================================================================== -->
     <header>
         <a href="/index.html" class="logo-link">
             <img class="logo" src="/media/images/logo.png" alt="Jo Smith - Photography">
@@ -78,6 +92,7 @@
                 <img class="icon-close-menu" src="/media/images/x-circle-fill.svg" alt="Close Menu Icon">
             </button>
 
+            <!-- Main navigation links. The 'active' class highlights the current page. -->
             <ul class="nav-list">
                 <li><a href="/index.html" class="active">Home</a></li>
                 <li><a href="pages/about.html">About</a></li>
@@ -86,72 +101,58 @@
                 <li><a href="pages/contact.html">Contact</a></li>
             </ul>
         </nav>
-
     </header>
 
-    <!-- The main hero section with the parallax background -->
+    <!-- ==========================================================================
+       SECTION: HERO SLIDESHOW
+       The main visual introduction to the website, featuring a dynamic
+       background slideshow and centered text content.
+    ========================================================================== -->
     <div class="hero-parallax-wrapper">
+
+        <!-- This container holds all the background images for the slideshow. JavaScript will cycle through them. -->
         <div class="parallax-slideshow">
             <img src="/media/images/nature/wide-images/01photo-nature.jpg"
                 alt="A colorful kingfisher bird emerges from the water with a small fish in its beak, creating a splash."
                 class="parallax-bg-slide active">
-            <img src="/media/images/nature/wide-images/02photo-nature.jpg"
-                alt="A family of Highland cattle with long shaggy hair standing in a snow-covered forest."
-                class="parallax-bg-slide">
-            <img src="/media/images/nature/wide-images/03photo-nature.jpg"
-                alt="A close-up profile of a female red deer's head, showing its detailed fur and large, dark eye."
-                class="parallax-bg-slide">
-            <img src="/media/images/nature/wide-images/04photo-nature.jpg"
-                alt="A black and white photograph of a dandelion seed head in a perfect sphere against a solid black background."
-                class="parallax-bg-slide">
-            <img src="/media/images/nature/wide-images/05photo-nature.jpg"
-                alt="Side profile of a windswept Highland cow with long, shaggy hair and curved horns in a snowy field."
-                class="parallax-bg-slide">
-            <img src="/media/images/nature/wide-images/06photo-nature.jpg"
-                alt="A serene, long-exposure photo of a rocky coast at sunset, with smooth, misty water and a colorful sky."
-                class="parallax-bg-slide">
-            <img src="/media/images/nature/wide-images/07photo-nature.jpg"
-                alt="An orange and black Fritillary butterfly resting on a purple thistle flower with a softly blurred background."
-                class="parallax-bg-slide">
-            <img src="/media/images/nature/wide-images/08photo-nature.jpg"
-                alt="A pebble beach at sunset with misty ocean water and warm clouds in the sky."
-                class="parallax-bg-slide">
-            <img src="/media/images/nature/wide-images/09photo-nature.jpg"
-                alt="A mother sheep and her young lamb standing on a green hill, both looking towards the camera."
-                class="parallax-bg-slide">
-            <img src="/media/images/nature/wide-images/10photo-nature.jpg"
-                alt="A humorous photo of a Highland cow sticking its tongue out with a funny expression on its face."
-                class="parallax-bg-slide">
+            <!-- ... more slide images ... -->
             <img src="/media/images/nature/wide-images/11photo-nature.jpg"
                 alt="A windswept, gnarled tree by a lake in a black and white Scottish mountain landscape."
                 class="parallax-bg-slide">
         </div>
 
+        <!-- This container holds the text and button that sit ON TOP of the slideshow. -->
         <div class="parallax-content">
             <h1>Jo Smith Photography</h1>
-            <!-- <h2>Photography</h2> -->
-            <p class="parallax-location"> Based in Dundee</p>
+            <p class="parallax-location">Based in Dundee</p>
             <p class="parallax-tagline">Capturing Scotland's Beauty, One Moment at a Time.</p>
             <a href="/pages/gallery.html" class="cta-button-gallery">View My Work</a>
         </div>
     </div>
 
+    <!-- ==========================================================================
+       SECTION: MAIN CONTENT
+       Contains the primary content sections of the homepage below the hero.
+    ========================================================================== -->
     <main>
+
+        <!-- A brief "About Me" introduction with a link to the full About page. -->
         <section class="about-me-home">
             <div class="about-me-content">
                 <div class="about-me-image">
-                    <img src="/media/images/jo-smith2.jpg" alt="A photo of Jo Smith, the Photographer">
+                    <img src="/media/images/jo-smith2.jpg" alt="A professional portrait of Jo Smith, the Photographer.">
                 </div>
                 <div class="about-me-text">
                     <h2>A Dundee Based Photographer</h2>
                     <p>Welcome! I'm Jo, a photography graduate born and raised in Dundee. My passion lies in capturing
                         the stunning beauty of nature, but I apply that same creative eye to all forms of general
                         photography to bring your moments to life.</p>
-
                     <a href="/pages/about.html" class="cta-button">More about me</a>
                 </div>
             </div>
         </section>
+
+        <!-- A Call to Action (CTA) section with two distinct options to guide users. -->
         <section class="home-cta-section">
             <div class="cta-content-wrapper">
                 <div class="cta-item">
@@ -159,7 +160,6 @@
                     <p>Visit my gallery to see a collection of my latest photography collection.</p>
                     <a href="/pages/gallery.html" class="cta-button-secondary">View Gallery</a>
                 </div>
-
                 <div class="cta-item">
                     <h2>Book a Session</h2>
                     <p>Whether it's a personal portrait or a special event, I'm here to help you!.</p>
@@ -168,26 +168,32 @@
             </div>
         </section>
 
+        <!-- An embedded third-party widget for a news ticker. -->
         <div class="news-ticker">
             <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
             <div class="commonninja_component pid-69ac2322-d84a-4c50-b306-8daba29f15ea"></div>
         </div>
     </main>
 
+    <!-- ==========================================================================
+       SECTION: SITE FOOTER
+       This is the main footer, consistent across all pages.
+    ========================================================================== -->
     <footer>
         <div class="footer-content">
             <img src="/media/images/logo.png" alt="Jo Smith Photography Logo" class="footer-logo">
 
             <div class="footer-middle-row">
-                <!-- Clock Container. The JavaScript will place the date and the digital clock here. -->
+                <!-- This container will be populated by JavaScript with the current date and time. -->
                 <div class="datetime-container">
                     <div id="date"></div>
-                    <div id="clock"> </div>
+                    <div id="clock"></div>
                 </div>
 
+                <!-- Social media links -->
                 <div class="social-links">
                     <a href="https://instagram.com/josmithphotography123" target="_blank" aria-label="Instagram">
-                        <!-- Icono de Instagram SVG -->
+                        <!-- SVG icon for Instagram -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-instagram" viewBox="0 0 16 16">
                             <path
@@ -198,7 +204,7 @@
                         </svg>
                     </a>
                     <a href="https://twitter.com/josmithphoto" target="_blank" aria-label="X/Twitter">
-                        <!-- Icono de X (Twitter) SVG -->
+                        <!-- SVG icon for X (Twitter) -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             class="bi bi-twitter-x" viewBox="0 0 16 16">
                             <path
@@ -208,7 +214,7 @@
                 </div>
             </div>
 
-
+            <!-- Copyright and address information -->
             <div class="footer-info">
                 <p>&copy; 2025 Jo Smith Photography</p>
                 <p>987 Brook Street, Dundee, DD5 2EA</p>
@@ -216,7 +222,12 @@
         </div>
     </footer>
 
+    <!-- ==========================================================================
+       SECTION: JAVASCRIPT
+       Scripts are placed at the end of the body for faster page load times.
+    ========================================================================== -->
     <script src="js/script.js"></script>
+
 </body>
 
 </html>

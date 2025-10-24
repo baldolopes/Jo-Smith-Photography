@@ -195,13 +195,19 @@ header {
 }
 
 .hero-parallax-wrapper {
-    height: 90vh; /* Or whatever height you want your hero section to be */
-    position: relative; /* Crucial: This makes it the positioning context for its absolutely positioned children */
+    height: 90vh;
+    /* Or whatever height you want your hero section to be */
+    position: relative;
+    /* Crucial: This makes it the positioning context for its absolutely positioned children */
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center;     /* Vertically center the content */
-    overflow: hidden;        /* Hide anything that might stick out, like overflow during transitions */
-    text-align: center;      /* Center text within the parallax-content */
+    justify-content: center;
+    /* Horizontally center the content */
+    align-items: center;
+    /* Vertically center the content */
+    overflow: hidden;
+    /* Hide anything that might stick out, like overflow during transitions */
+    text-align: center;
+    /* Center text within the parallax-content */
 }
 
 /* --- And make sure your .parallax-bg-slide.active rule uses the NEW animation name --- */
@@ -220,12 +226,14 @@ header {
 
 /* This wrapper holds all the background images*/
 .parallax-slideshow {
-    position: absolute; /* Positioned relative to .hero-parallax-wrapper */
+    position: absolute;
+    /* Positioned relative to .hero-parallax-wrapper */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Make sure it's behind the content */
+    z-index: 1;
+    /* Make sure it's behind the content */
     background-color: #000;
 }
 
@@ -241,8 +249,10 @@ header {
 }
 
 .parallax-content {
-    position: relative; /* Needed for z-index to work, places it above the background */
-    z-index: 2; /* Make sure content is above the slideshow */
+    position: relative;
+    /* Needed for z-index to work, places it above the background */
+    z-index: 2;
+    /* Make sure content is above the slideshow */
 
     background: rgba(0, 0, 0, 0.3);
     color: var(--text-light);
@@ -254,6 +264,7 @@ header {
     box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .parallax-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp (3rem, 10vw, 4rem);
@@ -543,53 +554,70 @@ footer {
 }
 
 .contact-page-container {
-    padding: 0 15px; /* Horizontal padding for small screens */
+    padding: 0 15px;
+    /* Horizontal padding for small screens */
     margin: 0 auto;
 }
 
 /* General styles for the contact form section - Mobile First */
 .contact-form-section {
-    width: 100%; /* Take up full width within its parent container */
-    margin: 20px auto; /* Centered with some vertical spacing */
+    width: 100%;
+    /* Take up full width within its parent container */
+    margin: 20px auto;
+    /* Centered with some vertical spacing */
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Lighter shadow for mobile */
     text-align: center;
-    font-family: Arial, sans-serif; /* Ensure this matches your main font */
+    font-family: Arial, sans-serif;
+    /* Ensure this matches your main font */
 }
 
 /* Main heading for the contact form section */
 .contact-form-section h2 {
-    font-size: 1.8em; /* Appropriate size for mobile headings */
-    color: #2c3e50; /* A darker, professional color */
+    font-size: 1.8em;
+    /* Appropriate size for mobile headings */
+    color: #2c3e50;
+    /* A darker, professional color */
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .contact-section-wrapper {
-    width: 90%; /* Occupy 90% width on small screens */
-    margin: 30px auto; /* Centered with vertical spacing */
-    padding: 0; /* No padding on the wrapper itself for mobile */
+    width: 90%;
+    /* Occupy 90% width on small screens */
+    margin: 30px auto;
+    /* Centered with vertical spacing */
+    padding: 0;
+    /* No padding on the wrapper itself for mobile */
     display: flex;
-    flex-direction: column; /* Stack form and map vertically on mobile */
-    gap: 30px; /* Space between form and map */
+    flex-direction: column;
+    /* Stack form and map vertically on mobile */
+    gap: 30px;
+    /* Space between form and map */
 }
 
 /* Styles for the contact form container - Mobile First */
 .contact-form-container {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
-    padding: 25px; /* Padding inside the form container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Lighter shadow for mobile */
+    padding: 25px;
+    /* Padding inside the form container */
     text-align: center;
-    font-family: Arial, sans-serif; /* Ensure this matches your main font */
+    font-family: Arial, sans-serif;
+    /* Ensure this matches your main font */
 }
 
 /* Main heading for the contact form section */
 .contact-form-container h2 {
-    font-size: 1.8em; /* Appropriate size for mobile headings */
-    color: #2c3e50; /* A darker, professional color */
+    font-size: 1.8em;
+    /* Appropriate size for mobile headings */
+    color: #2c3e50;
+    /* A darker, professional color */
     margin-bottom: 10px;
     font-weight: 700;
 }
@@ -606,18 +634,22 @@ footer {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Smaller gap for mobile */
+    gap: 15px;
+    /* Smaller gap for mobile */
     text-align: left;
 }
 
 .form-group {
-    margin-bottom: 10px; /* Smaller margin for mobile */
+    margin-bottom: 10px;
+    /* Smaller margin for mobile */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px; /* Smaller margin for mobile */
-    font-size: 0.95em; /* Smaller font size for labels */
+    margin-bottom: 5px;
+    /* Smaller margin for mobile */
+    font-size: 0.95em;
+    /* Smaller font size for labels */
     color: #555;
     font-weight: 500;
 }
@@ -626,12 +658,15 @@ footer {
 .form-group input[type="email"],
 .form-group textarea {
     width: 100%;
-    padding: 10px 12px; /* Smaller padding for mobile inputs */
+    padding: 10px 12px;
+    /* Smaller padding for mobile inputs */
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 0.9em; /* Smaller font size for input text */
+    font-size: 0.9em;
+    /* Smaller font size for input text */
     color: #333;
-    box-sizing: border-box; /* Include padding and border in the total width */
+    box-sizing: border-box;
+    /* Include padding and border in the total width */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -640,29 +675,36 @@ footer {
 .form-group textarea:focus {
     border-color: #007bff;
     outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.2); /* Slightly more prominent shadow on focus */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+    /* Slightly more prominent shadow on focus */
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 100px; /* Slightly smaller min-height for mobile */
+    min-height: 100px;
+    /* Slightly smaller min-height for mobile */
 }
 
 /* Submit button styles - Mobile First */
 .submit-btn {
     background-color: #007bff;
     color: white;
-    padding: 12px 20px; /* Smaller padding for mobile button */
+    padding: 12px 20px;
+    /* Smaller padding for mobile button */
     border: none;
     border-radius: 5px;
-    font-size: 1em; /* Mobile-friendly font size */
+    font-size: 1em;
+    /* Mobile-friendly font size */
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 100%; /* Full width button on mobile */
-    display: block; /* Ensures it takes full width and new line */
+    width: 100%;
+    /* Full width button on mobile */
+    display: block;
+    /* Ensures it takes full width and new line */
     margin-top: 15px;
-    text-transform: uppercase; /* Make button text uppercase */
+    text-transform: uppercase;
+    /* Make button text uppercase */
 }
 
 .submit-btn:hover {
@@ -671,13 +713,15 @@ footer {
 }
 
 .submit-btn:active {
-    transform: translateY(0); /* Ensure no unintended transform on touch */
+    transform: translateY(0);
+    /* Ensure no unintended transform on touch */
 }
 
 /* Styles for error messages - Mobile First */
 .error {
     color: #dc3545;
-    font-size: 0.85em; /* Smaller error text for mobile */
+    font-size: 0.85em;
+    /* Smaller error text for mobile */
     margin-top: 4px;
     display: block;
 }
@@ -708,13 +752,16 @@ footer {
 .map-embed-wrapper {
     margin-top: 15px;
     border-radius: 8px;
-    overflow: hidden; /* Ensures map corners are rounded */
+    overflow: hidden;
+    /* Ensures map corners are rounded */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .map-embed-wrapper iframe {
-    border: 0; /* Remove default iframe border */
-    display: block; /* Remove extra space below iframe */
+    border: 0;
+    /* Remove default iframe border */
+    display: block;
+    /* Remove extra space below iframe */
 }
 
 /* ======================================================= */
@@ -726,40 +773,42 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh; /* Ensure the card is vertically centered */
+    min-height: 70vh;
+    /* Ensure the card is vertically centered */
     padding: 40px 20px;
     /* Main Content Background remains light */
-    background-color: var(--bg-light); 
+    background-color: var(--bg-light);
 }
 
 .confirmation-section-wrapper {
     width: 100%;
-    max-width: 600px; /* Maximum width for the confirmation container */
+    max-width: 600px;
+    /* Maximum width for the confirmation container */
     margin: auto;
 }
 
 .confirmation-card {
     /* CARD BACKGROUND: Deep Charcoal */
-    background-color: var(--bg-dark); 
+    background-color: var(--bg-dark);
     padding: 50px 30px;
     border-radius: 12px;
     /* Soft shadow on a dark card is usually less noticeable, but can stay */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
     /* TOP BORDER: Muted Teal */
-    border-top: 5px solid var(--accent-teal); 
+    border-top: 5px solid var(--accent-teal);
 }
 
 /* Success icon style */
 .success-icon {
     font-size: 3em;
     /* ICON COLOR: Muted Teal */
-    color: var(--accent-teal); 
+    color: var(--accent-teal);
     margin-bottom: 20px;
     display: inline-block;
     padding: 5px 15px;
     /* ICON BORDER: Muted Teal */
-    border: 3px solid var(--accent-teal); 
+    border: 3px solid var(--accent-teal);
     border-radius: 50%;
     line-height: 1;
 }
@@ -767,21 +816,21 @@ footer {
 .confirmation-card h1 {
     font-size: 2.5em;
     /* HEADING COLOR: Soft Ivory */
-    color: var(--text-light); 
+    color: var(--text-light);
     margin-bottom: 25px;
 }
 
 .main-message {
     font-size: 1.2em;
     /* TEXT COLOR: Soft Ivory (main text) */
-    color: var(--text-light); 
+    color: var(--text-light);
     margin-bottom: 15px;
 }
 
 .secondary-message {
     font-size: 1em;
     /* SECONDARY TEXT COLOR: Highlight Grey for subtle contrast */
-    color: var(--highlight-grey); 
+    color: var(--highlight-grey);
     margin-bottom: 30px;
 }
 
@@ -790,7 +839,7 @@ footer {
     margin-top: 30px;
     padding-top: 20px;
     /* SEPARATOR LINE: Highlight Grey */
-    border-top: 1px solid var(--highlight-grey); 
+    border-top: 1px solid var(--highlight-grey);
 }
 
 .confirmation-actions p {
@@ -801,8 +850,9 @@ footer {
 .home-btn {
     display: inline-block;
     /* BUTTON BACKGROUND: Darker Teal for primary action */
-    background-color: var(--accent-teal-darker); 
-    color: var(--text-light); /* Soft Ivory text on button */
+    background-color: var(--accent-teal-darker);
+    color: var(--text-light);
+    /* Soft Ivory text on button */
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 6px;
@@ -813,7 +863,7 @@ footer {
 
 .home-btn:hover {
     /* HOVER COLOR: Muted Teal (Lighter shade for hover effect) */
-    background-color: var(--accent-teal); 
+    background-color: var(--accent-teal);
     transform: translateY(-2px);
 }
 
@@ -978,18 +1028,24 @@ footer {
     }
 
     .contact-section-wrapper {
-        width: 65%; /* Slightly wider for tablets */
-        max-width: 960px; /* Constrain overall width */
-        margin: 50px auto; /* More vertical spacing */
-        gap: 40px; /* Increased space between form and map */
+        width: 65%;
+        /* Slightly wider for tablets */
+        max-width: 960px;
+        /* Constrain overall width */
+        margin: 50px auto;
+        /* More vertical spacing */
+        gap: 40px;
+        /* Increased space between form and map */
     }
 
     .contact-form-container {
-        padding: 40px; /* Larger padding for tablets */
+        padding: 40px;
+        /* Larger padding for tablets */
     }
 
     .contact-form-container h2 {
-        font-size: 2.5em; /* Larger heading */
+        font-size: 2.5em;
+        /* Larger heading */
     }
 
     .contact-form-container .contact-intro {
@@ -997,50 +1053,61 @@ footer {
     }
 
     .form-group label {
-        font-size: 1rem; /* Standard label size */
+        font-size: 1rem;
+        /* Standard label size */
         margin-bottom: 8px;
     }
 
     .form-group input[type="text"],
     .form-group input[type="email"],
     .form-group textarea {
-        padding: 12px 15px; /* Larger padding for inputs */
-        font-size: 1em; /* Standard input text size */
+        padding: 12px 15px;
+        /* Larger padding for inputs */
+        font-size: 1em;
+        /* Standard input text size */
         color: var(--highlight-grey);
         font-style: italic;
         font-size: 0.9rem;
     }
 
     .form-group textarea {
-        min-height: 140px; /* Taller textarea */
+        min-height: 140px;
+        /* Taller textarea */
     }
 
     .submit-btn {
-        width: auto; /* Auto width on larger screens */
-        padding: 15px 30px; /* Larger padding for button */
-        font-size: 1.1em; /* Larger button text */
+        width: auto;
+        /* Auto width on larger screens */
+        padding: 15px 30px;
+        /* Larger padding for button */
+        font-size: 1.1em;
+        /* Larger button text */
         margin-top: 20px;
-        align-items: center; /* Aligns button to the left in flex column */
+        align-items: center;
+        /* Aligns button to the left in flex column */
         justify-content: center;
     }
 
     .submit-btn:hover {
         background-color: #0056b3;
-        transform: translateY(-2px); /* Re-enable hover effect for desktop */
+        transform: translateY(-2px);
+        /* Re-enable hover effect for desktop */
     }
 
-    .contact-form .form-group:last-of-type{
+    .contact-form .form-group:last-of-type {
         display: flex;
         justify-content: center;
     }
 
     .error {
-        font-size: 0.9em; /* Standard error text size */
+        font-size: 0.9em;
+        /* Standard error text size */
         margin-top: 5px;
     }
 
     .contact-map-container {
-        padding: 40px; /* Larger padding for tablets */
+        padding: 40px;
+        /* Larger padding for tablets */
     }
 
     .contact-map-container h3 {
@@ -1092,29 +1159,61 @@ footer {
         margin: 0 auto;
     }
 
+    .about-me-content {
+        /* Columnas lado a lado */
+        flex-direction: row;
+        /* Texto alineado a la izquierda */
+        text-align: left;
+        gap: 3rem;
+    }
+
+    .about-me-image {
+        /* La imagen ocupa un 30% del espacio */
+        flex-basis: 30%;
+        flex-shrink: 0;
+        padding-left: 2rem;
+    }
+
+    .about-me-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-me-text {
+        /* El texto ocupa el 70% restante */
+        flex-basis: 70%;
+    }
+
     .contact-section-wrapper {
-        flex-direction: column; /* Arrange form and map side-by-side on desktop */
-        align-items: center; /* Align contents to the top */
+        flex-direction: column;
+        /* Arrange form and map side-by-side on desktop */
+        align-items: center;
+        /* Align contents to the top */
         width: 100%;
-        max-width: 1200px; /* Even wider layout for desktops */
+        max-width: 1200px;
+        /* Even wider layout for desktops */
         margin: 50px auto;
     }
 
     .contact-form-container {
         width: 60%;
-        padding: 50px; /* Even larger padding for desktops */
+        padding: 50px;
+        /* Even larger padding for desktops */
     }
 
     .contact-map-container {
         width: 80%;
-        padding: 50px; /* Even larger padding for desktops */
+        padding: 50px;
+        /* Even larger padding for desktops */
     }
-    .contact-form-container{
+
+    .contact-form-container {
         margin-bottom: 40px;
     }
 
     .contact-form-container h2 {
-        font-size: 3em; /* Even larger heading for desktops */
+        font-size: 3em;
+        /* Even larger heading for desktops */
     }
 
     .contact-form-container .contact-intro {
@@ -1130,7 +1229,8 @@ footer {
     }
 
     .map-embed-wrapper iframe {
-        height: 400px; /* Taller map for desktops */
+        height: 400px;
+        /* Taller map for desktops */
     }
 
 }

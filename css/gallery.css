@@ -1,37 +1,48 @@
-/* Fonts API */
+/* ==========================================================================
+   1. FONT IMPORTS & GLOBAL VARIABLES
+   ========================================================================== */
+
+/* Import Google Fonts for consistent typography across the site */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* A cursive font for special headings */
 
-/* Define color variables for the "Scottish Loch  theme */
+/* Define color variables for the "Scottish Loch" theme for easy reuse and maintenance */
 :root {
-    /*Deep charcoal */
+    /* Deep charcoal for dark backgrounds and text on light backgrounds */
     --bg-dark: #1E2426;
+    --text-dark: #1E2426;
 
-    /*Soft Ivory*/
+    /* Soft Ivory for light backgrounds and text on dark backgrounds */
     --text-light: #f0f0e6;
-
-    /* Muted Teal */
-    --accent-teal: #4A7C7D;
-    --accent-teal-darker: #3a6364;
-
-    /* Cool Grey */
-    --highlight-grey: #A0A6A8;
-
-    /* Use Soft Ivory also for light sections */
     --bg-light: #F0F0E6;
 
-    /* Use Deep Charcoal for text on light backgrounds */
-    --text-dark: #1E2426;
+    /* Muted Teal for primary accents and interactive elements */
+    --accent-teal: #4A7C7D;
+    --accent-teal-darker: #3a6364;
+    /* A darker version for hover states */
+
+    /* Cool Grey for subtitles and secondary text */
+    --highlight-grey: #A0A6A8;
 }
 
-/* === Mobile First - Base Styles === */
+/* ==========================================================================
+   2. GENERAL GALLERY STYLES
+   ========================================================================== */
+
+/* Base styles for all gallery sections on the page */
 .gallery-section {
     padding: 4rem 1.5rem;
     text-align: center;
 }
 
-/* 1. NATURE GALLERY (Slideshow Style) */
+/* ==========================================================================
+   3. NATURE GALLERY (SLIDESHOW)
+   ========================================================================== */
+
+/* --- Section Styling --- */
+
 .nature-gallery {
     background-color: var(--bg-light);
     color: var(--text-dark);
@@ -43,12 +54,15 @@
     color: var(--text-dark);
 }
 
-/* This is our main wrapper. It's fluid on mobile and will be constrained on larger screens. */
+/* --- Slideshow Container & Structure --- */
+
+/* Main wrapper for the slideshow. Fluid on mobile, constrained on larger screens. */
 .gallery-container {
     max-width: 850px;
-    /* This will center it when max-width is applied */
     margin: 0 auto;
+    /* This centers the container when max-width is applied */
     position: relative;
+    /* Establishes a positioning context for absolute children */
 }
 
 .slideshow-container {
@@ -56,10 +70,12 @@
     margin-bottom: 1rem;
 }
 
+/* Hide all slides by default */
 .mySlides {
     display: none;
 }
 
+/* Only the active slide will be visible */
 .mySlides.active-slide {
     display: block;
 }
@@ -68,16 +84,21 @@
     width: 100%;
     height: auto;
     vertical-align: middle;
+    /* Removes extra space below the image */
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* --- Slideshow Controls & Overlays --- */
+
+/* Previous/Next arrow buttons */
 .prev,
 .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    /* Vertically centers the arrows */
     padding: 16px;
     color: var(--bg-light);
     font-weight: bold;
@@ -85,6 +106,7 @@
     transition: background-color 0.3s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    /* Prevents text selection on double-click */
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -102,6 +124,7 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* "1 / 11" text overlay */
 .numbertext {
     color: var(--text-light);
     background-color: rgba(0, 0, 0, 0.5);
@@ -113,6 +136,7 @@
     border-radius: 8px 0 8px 0;
 }
 
+/* Container for the caption text below the slideshow */
 .caption-container {
     padding: 0.5rem 1rem;
     text-align: center;
@@ -128,36 +152,31 @@
     padding: 0.5rem 0;
 }
 
-/* Thumbnails */
+/* --- Thumbnail Navigation --- */
+
 .row {
     display: flex;
     justify-content: center;
-    /* Allow thumbnails to wrap on small screens */
     flex-wrap: wrap;
+    /* Allows thumbnails to wrap to the next line on small screens */
     gap: 10px;
     padding-top: 10px;
 }
 
 .column {
     flex: 0 0 auto;
+    /* Prevents thumbnails from stretching to fill space */
 }
 
-
-/* Style for the active thumbnail */
-.demo.active {
-    opacity: 1;
-    /* Make the active thumbnail fully opaque */
-    border: 2px solid var(--accent-teal);
-    /* Add a colored border to highlight it */
-}
-
-/* Optional: Make other thumbnails slightly transparent to emphasize the active one */
+/* Individual thumbnail image styles */
 .demo {
     height: 65px;
+    /* Sets a consistent height for all thumbnails */
     width: auto;
+    /* Width adjusts automatically to maintain aspect ratio */
     opacity: 0.7;
-    transition: opacity 0.2s ease-in-out;
-    /* Smooth transition */
+    transition: all 0.2s ease-in-out;
+    /* Smooth transition for multiple properties */
     cursor: pointer;
     border-radius: 4px;
 }
@@ -166,20 +185,23 @@
     opacity: 1;
 }
 
-.active,
-.demo.active:hover {
+/* Visual cue for the currently active thumbnail */
+.demo.active {
     opacity: 1;
-    border-color: var(--accent-teal);
+    /* Makes the active thumbnail fully opaque */
+    border: 2px solid var(--accent-teal);
+    /* Adds a colored border to highlight it */
+}
+
+/* Adds a slight scale effect on hover for the active thumbnail */
+.demo.active:hover {
     transform: scale(1.08);
 }
 
-/* WEDDING GALLERY (Masonry Style) */
 
-/*
-=====================================================
-  FINAL WEDDING GALLERY (Advanced Dense Packing Grid)
-=====================================================
-*/
+/* ==========================================================================
+   4. WEDDING GALLERY (MASONRY GRID)
+   ========================================================================== */
 
 .wedding-gallery {
     background-color: var(--bg-dark);
@@ -196,19 +218,19 @@
 .masonry-grid {
     display: grid;
     grid-gap: 1rem;
-
-    /* Define a flexible grid with 2 columns on mobile */
     grid-template-columns: repeat(2, 1fr);
-
-    /* The magic property to prevent gaps */
-    grid-auto-flow: dense;
+    /* Two-column layout for mobile */
     max-width: 1200px;
-    /* This centers the grid horizontally*/
     margin: 0 auto;
+    /* Centers the grid horizontally */
+
+    /* The "magic" property: tells the grid's algorithm to fill in holes to prevent gaps */
+    grid-auto-flow: dense;
 }
 
 .masonry-item {
     overflow: hidden;
+    /* Ensures the hover effect doesn't show outside the rounded corners */
     border-radius: 8px;
 }
 
@@ -216,21 +238,26 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Resizes the image to cover the grid item without distortion */
     transition: transform 0.7s ease;
 }
 
+/* A subtle zoom effect on hover for visual feedback */
 .masonry-item img:hover {
     transform: scale(1.08);
 }
 
-/* --- Make some items TALLER (vertical) --- */
+/* --- Artistic Control over Grid Items --- */
+/* These rules make specific grid items span multiple rows or columns for a dynamic look */
+
+/* Make specific items TALLER (span 2 rows) */
 .masonry-item:nth-child(4),
 .masonry-item:nth-child(9),
 .masonry-item:nth-child(13) {
     grid-row: span 2;
 }
 
-/* --- Make some items WIDER (landscape) --- */
+/* Make specific items WIDER (span 2 columns) */
 .masonry-item:nth-child(2),
 .masonry-item:nth-child(7),
 .masonry-item:nth-child(11) {
@@ -238,18 +265,23 @@
 }
 
 
-/* --- Responsive Layout for the Grid --- */
+/* ==========================================================================
+   5. RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
+/* --- Tablet Styles (768px and up) --- */
 @media (min-width: 768px) {
 
-    /* On tablets, we increase the number of columns */
+    /* Increase the number of columns in the masonry grid */
     .masonry-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* --- Desktop Styles (1024px and up) --- */
 @media (min-width: 1024px) {
 
-    /* On desktops, we use 4 columns */
+    /* Further increase the number of columns for wider screens */
     .masonry-grid {
         grid-template-columns: repeat(4, 1fr);
     }
