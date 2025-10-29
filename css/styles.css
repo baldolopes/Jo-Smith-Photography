@@ -266,7 +266,7 @@ header {
 }
 
 .parallax-content h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp (3rem, 10vw, 4rem);
     font-weight: 700;
     color: var(--bg-light);

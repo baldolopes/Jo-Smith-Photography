@@ -85,7 +85,7 @@
 }
 
 .about-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     /* Responsive font size: min 3rem, scales with 8% of viewport width, max 5rem */
     font-size: clamp(3rem, 8vw, 5rem);
     margin-bottom: 0.8rem;
@@ -128,7 +128,7 @@
 }
 
 .about-intro-text h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1.5rem;
     color: var(--text-dark);
@@ -172,7 +172,7 @@
 }
 
 .about-philosophy-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 3rem;
     color: var(--bg-light);

@@ -53,7 +53,7 @@
     font-size: 3rem;
     color: var(--text-dark);
     font-weight: 700;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 2px;
 }
 
@@ -212,8 +212,8 @@
 }
 
 .wedding-gallery .gallery-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
     color: var(--text-light);
     margin-bottom: 1.5rem;
 }
